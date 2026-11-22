@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:,">
+<title>TRE SPA — Grand Opening Flyer | Da Nang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&family=Noto+Serif:ital,wght@0,600;0,700;1,400&family=Noto+Sans+JP:wght@400;600;700&family=Noto+Sans+KR:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Namecard palette — luxury brown & gold.
+       Card front: deep brown gradient #241407 → #3A2413 → #4A2C14 with gold.
+       Card back: warm ivory #FAF5EC with brown text. */
+    --cream:#FAF5EC;
+    --ink:#33200E;
+    --gold:#C9A44C;
+    --gold-dark:#856228;
+    --gold-light:#E9CD8A;
+    --brown:#3A2413;
+    --brown-mid:#4A2C14;
+    --brown-dark:#241407;
+    --green:#3A2413;
+    --green-dark:#241407;
+    --border:#DCC493;
+    --muted:#55432A;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body {
+    background:linear-gradient(135deg, #241407 0%, #3A2413 55%, #4A2C14 100%);
+    background-attachment:fixed;
+    font-family:'Noto Sans','Noto Sans JP','Noto Sans KR','Noto Sans SC', sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; text-decoration:none; }
+  a:focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:3px;
+    border-radius:8px;
+  }
+  .page {
+    max-width:1240px;
+    margin:0 auto;
+    /* Card-back gold ribbon across the top + the card front's sheer bamboo
+       watermark bleeding off the page edges, over warm ivory. */
+    background-color:var(--cream);
+    background-image:url('assets/asset-01.png'), url('assets/asset-01.png'), linear-gradient(90deg, #3A2413, #C9A44C, #3A2413);
+    background-size:640px auto, 560px auto, 100% 6px;
+    background-position:right -170px top 240px, left -190px top 58%, top left;
+    background-repeat:no-repeat;
+    padding:30px 48px 0 48px;
+    display:flex; flex-direction:column;
+    min-height:100vh;
+    box-shadow:0 0 60px rgba(0,0,0,.45);
+  }
+
+  /* ---------- clickable affordances ---------- */
+  .clickable{ cursor:pointer; transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease; }
+  .clickable:hover{ box-shadow:0 10px 28px rgba(58,36,19,.24); }
+  .tap-hint{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:12.5px; font-weight:700; letter-spacing:1.5px;
+    color:var(--gold-dark);
+  }
+  .tap-hint::after{ content:"↗"; font-size:14px; }
+
+  /* header */
+  .header { text-align:center; }
+  .header img.logo { width:196px; height:196px; object-fit:contain; max-width:52vw; height:auto; aspect-ratio:1; mix-blend-mode:multiply; }
+  .tagline { margin-top:0; font-size:19px; letter-spacing:7px; color:var(--gold-dark); font-weight:600; }
+
+  /* opening band */
+  .band { margin-top:16px; border-radius:18px; overflow:hidden; position:relative; min-height:188px;
+          background:url('assets/asset-02.jpg') center 62%/cover; display:flex; }
+  .band .overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(90deg, rgba(36,20,7,.87), rgba(58,36,19,.62) 55%, rgba(74,44,20,.42)); }
+  /* Sheer bamboo watermark, as on the namecard front */
+  .band::after { content:""; position:absolute; right:-46px; top:50%; transform:translateY(-50%); z-index:2;
+                 width:290px; height:290px; background:url('assets/asset-03.png') center/contain no-repeat;
+                 opacity:.15; pointer-events:none; }
+  .band .inner { position:relative; z-index:3; padding:22px 196px 22px 40px; color:#FFF7E2; width:100%; }
+  /* Oversized circular 30% OFF badge on the opening band — made big so
+     guests' eyes stop on it (Lieu's request). */
+  .band-badge{
+    position:absolute; z-index:4; right:30px; top:50%; transform:translateY(-50%) rotate(6deg);
+    width:142px; height:142px; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #F6E3A6, #DCB968 58%, #C9A44C);
+    border:3px solid #FFF3D0;
+    box-shadow:0 0 0 3px var(--gold-dark), 0 14px 30px rgba(0,0,0,.45);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    color:var(--green-dark); text-align:center; padding:10px;
+  }
+  .band-badge .bb-num{ font-family:'Noto Serif', serif; font-size:46px; font-weight:700; line-height:.95; }
+  .band-badge .bb-off{ font-size:20px; font-weight:800; letter-spacing:3px; line-height:1.15; }
+  .band-badge .bb-when{ margin-top:4px; font-size:11.5px; font-weight:700; letter-spacing:1px; color:#5C3D14; line-height:1.3; }
+  .band .kicker { font-size:18px; letter-spacing:6px; color:var(--gold-light); font-weight:700; }
+  .band h1 { font-family:'Noto Serif', serif; font-size:62px; line-height:1.05; font-weight:700; margin-top:3px; }
+  .band .date { margin-top:6px; font-size:26px; font-weight:600; }
+  .band .date span { color:var(--gold-light); }
+  .band .multi { margin-top:7px; font-size:17px; letter-spacing:3px; color:#F3E5BC; font-weight:600; }
+  .slogan { text-align:center; margin-top:14px; font-family:'Noto Serif', serif; font-style:italic;
+            font-size:21px; color:#7A5A2E; line-height:1.5; padding:0 8px; }
+
+  /* grand opening promo banner — oversized 30% OFF so it stops the eye */
+  .promo{
+    margin-top:16px; border-radius:18px; text-align:center; position:relative; overflow:hidden;
+    background:linear-gradient(135deg, #F3DC9A 0%, #E3C26E 55%, #C9A44C 100%);
+    border:3px solid var(--gold-dark);
+    box-shadow:0 16px 38px rgba(58,36,19,.38);
+    padding:26px 30px 30px;
+  }
+  .promo::before, .promo::after{
+    content:"✦"; position:absolute; top:14px;
+    font-size:22px; color:rgba(36,20,7,.45);
+  }
+  .promo::before{ left:18px; }
+  .promo::after{ right:18px; }
+  .promo .promo-kicker{ font-size:17px; font-weight:800; letter-spacing:4px; color:#5C3D14; line-height:1.5; }
+  .promo .promo-big{ font-family:'Noto Serif', serif; font-size:clamp(46px, 11.5vw, 108px); font-weight:700; line-height:1.02; color:var(--green-dark); letter-spacing:1px; margin-top:6px; text-shadow:0 2px 0 rgba(255,247,226,.55); }
+  .promo .promo-sub{ margin-top:10px; font-size:21px; font-weight:800; letter-spacing:2px; color:#4A2C14; line-height:1.45; }
+  .promo [data-lang]{ display:none; }
+  .promo[data-active="en"] [data-lang="en"],
+  .promo[data-active="vi"] [data-lang="vi"],
+  .promo[data-active="ja"] [data-lang="ja"],
+  .promo[data-active="ko"] [data-lang="ko"],
+  .promo[data-active="zh"] [data-lang="zh"]{ display:block; }
+
+  /* prominent Book Now button */
+  .cta-row{ margin-top:16px; display:flex; justify-content:center; }
+  .cta-btn{
+    display:inline-flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:center;
+    background:var(--green); color:#FFF7E2;
+    font-size:20px; font-weight:800; letter-spacing:1px;
+    padding:16px 34px; border-radius:999px;
+    border:2px solid var(--green-dark);
+    box-shadow:0 12px 28px rgba(36,20,7,.38);
+    text-align:center;
+  }
+  .cta-btn .langs{ font-size:15px; font-weight:600; color:var(--gold-light); letter-spacing:2px; }
+  .cta-btn:hover{ background:#4A2C14; transform:translateY(-2px); }
+  .cta-btn:active{ transform:translateY(0); }
+
+  /* photos */
+  .hero { margin-top:16px; height:260px; border-radius:16px; overflow:hidden; }
+  .hero img { width:100%; height:100%; object-fit:cover; object-position:center 50%; display:block; }
+  .row2 { margin-top:10px; display:flex; gap:12px; height:190px; }
+  .row2 .a { flex:2.05; border-radius:16px; overflow:hidden; }
+  .row2 .b { flex:1; border-radius:16px; overflow:hidden; }
+  .row2 img { width:100%; height:100%; object-fit:cover; display:block; }
+  .row2 .b img { object-position:center 30%; }
+
+  /* inside TRE SPA — photo gallery */
+  .gallery { margin-top:30px; }
+  .gallery h2 { text-align:center; font-family:'Noto Serif', serif; font-size:30px; color:var(--green); letter-spacing:2px; }
+  .gallery h2 small { display:block; font-family:'Noto Sans', sans-serif; font-size:14px; letter-spacing:4px; color:var(--gold); margin-top:4px; font-weight:700; }
+  .gallery .ghint { text-align:center; margin-top:9px; font-size:14px; color:var(--muted); }
+  .gallery [data-lang]{ display:none; }
+  .gallery[data-active="en"] [data-lang="en"],
+  .gallery[data-active="vi"] [data-lang="vi"],
+  .gallery[data-active="ja"] [data-lang="ja"],
+  .gallery[data-active="ko"] [data-lang="ko"],
+  .gallery[data-active="zh"] [data-lang="zh"]{ display:block; }
+  .gallery [data-lang].inl{ display:none; }
+  .gallery[data-active="en"] [data-lang="en"].inl,
+  .gallery[data-active="vi"] [data-lang="vi"].inl,
+  .gallery[data-active="ja"] [data-lang="ja"].inl,
+  .gallery[data-active="ko"] [data-lang="ko"].inl,
+  .gallery[data-active="zh"] [data-lang="zh"].inl{ display:inline; }
+  .ggrid { margin-top:16px; display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; }
+  .gcard { background:rgba(255,255,255,.88); border:1.5px solid var(--border); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; }
+  .gphoto { border:0; padding:0; margin:0; background:none; cursor:pointer; display:block; width:100%; font-family:inherit; }
+  .gphoto img { width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center; display:block; }
+  .gphoto:hover img { opacity:.94; }
+  .gphoto:focus-visible { outline:3px solid var(--gold); outline-offset:-3px; }
+  .gcard figcaption { padding:11px 12px 13px; text-align:center; }
+  .gcard figcaption span { font-size:16px; font-weight:700; color:var(--green); line-height:1.4; }
+  .gcard figcaption .gtap { display:block; margin-top:3px; font-size:11.5px; font-weight:700; letter-spacing:1.5px; color:var(--gold); }
+
+  /* about TRE SPA */
+  .about { margin-top:30px; }
+  .about h2 { text-align:center; font-family:'Noto Serif', serif; font-size:30px; color:var(--green); letter-spacing:2px; }
+  .about h2 small { display:block; font-family:'Noto Sans', sans-serif; font-size:14px; letter-spacing:4px; color:var(--gold); margin-top:4px; font-weight:700; }
+  .about [data-lang]{ display:none; }
+  .about[data-active="en"] [data-lang="en"],
+  .about[data-active="vi"] [data-lang="vi"],
+  .about[data-active="ja"] [data-lang="ja"],
+  .about[data-active="ko"] [data-lang="ko"],
+  .about[data-active="zh"] [data-lang="zh"]{ display:block; }
+  .about [data-lang].inl{ display:none; }
+  .about[data-active="en"] [data-lang="en"].inl,
+  .about[data-active="vi"] [data-lang="vi"].inl,
+  .about[data-active="ja"] [data-lang="ja"].inl,
+  .about[data-active="ko"] [data-lang="ko"].inl,
+  .about[data-active="zh"] [data-lang="zh"].inl{ display:inline; }
+  .about-card { margin-top:16px; background:rgba(255,255,255,.88); border:1.5px solid var(--border); border-top:5px solid var(--gold);
+                border-radius:14px; padding:24px 28px; display:flex; gap:24px; align-items:flex-start; }
+  .about-photo { width:120px; height:120px; border-radius:50%; object-fit:cover; object-position:center 22%;
+                 border:3px solid var(--gold); flex:none; }
+  .about-text { min-width:0; }
+  .about-text p { font-size:16.5px; line-height:1.75; color:var(--muted); }
+  .about-text p + p { margin-top:12px; }
+  .about-text .sign { font-family:'Noto Serif', serif; font-style:italic; color:var(--green); font-size:17px; }
+  .about-text .aline { font-size:14px; letter-spacing:.5px; color:var(--gold-dark); font-weight:600;
+                       border-top:1px dashed var(--border); padding-top:12px; }
+  @media (max-width: 640px){
+    .about h2{ font-size:25px; }
+    .about-card{ flex-direction:column; align-items:center; padding:20px 18px; }
+    .about-text p{ font-size:15.5px; }
+  }
+
+  /* owner messages from Lieu — text only, no audio playback */
+  .voice-block { margin-top:14px; background:rgba(255,255,255,.88); border:1.5px solid var(--border); border-top:5px solid var(--green);
+                 border-radius:14px; padding:20px 24px 22px; }
+  .voice-title { text-align:center; font-family:'Noto Serif', serif; font-size:22px; font-weight:700; color:var(--green); letter-spacing:1px; line-height:1.4; }
+  .voice-title::after { content:""; display:block; width:52px; height:2px; background:var(--gold); margin:9px auto 0; border-radius:2px; }
+  .voice-list { margin-top:16px; display:flex; flex-direction:column; gap:10px; }
+  .voice-item { background:rgba(250,245,236,.9); border:1px solid var(--border); border-radius:10px; padding:12px 14px 11px; }
+  .voice-head { display:flex; gap:10px; align-items:flex-start; margin-bottom:8px; }
+  .voice-num { width:26px; height:26px; border-radius:50%; background:var(--green); color:#FFF7E2;
+               font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center; flex:none; margin-top:1px; }
+  .voice-caps { flex:1; min-width:0; padding-top:2px; }
+  .voice-cap { font-size:15.5px; font-weight:700; color:var(--green); line-height:1.5; }
+  .transcript-wrap { margin-top:9px; }
+  .transcript-toggle { font-family:inherit; display:inline-flex; align-items:center; gap:6px; background:none; border:0; padding:4px 2px; font-size:13.5px; font-weight:700; color:var(--gold-dark); letter-spacing:.3px; cursor:pointer; }
+  .transcript-toggle:hover { color:var(--green); text-decoration:underline; text-underline-offset:3px; }
+  .transcript-toggle:focus-visible { outline:3px solid var(--gold); outline-offset:2px; border-radius:6px; }
+  .transcript-toggle .chev { font-size:11px; line-height:1; transition:transform .18s ease; }
+  .transcript-toggle[aria-expanded="true"] .chev { transform:rotate(180deg); }
+  .transcript-panel { margin-top:6px; border-top:1px dashed var(--border); padding-top:9px; }
+  .transcript-panel[hidden] { display:none !important; }
+  .transcript-body p { font-size:14px; line-height:1.72; color:var(--muted); }
+  .transcript-body p + p { margin-top:7px; }
+  @media (max-width: 640px){
+    .voice-block{ padding:17px 14px 18px; }
+    .voice-title{ font-size:19px; }
+    .voice-cap{ font-size:14.5px; }
+    .voice-item{ padding:11px 11px 10px; }
+  }
+
+  /* photo lightbox */
+  .lightbox { position:fixed; inset:0; z-index:100; background:rgba(30,17,6,.96); display:none; align-items:center; justify-content:center; flex-direction:column; padding:22px 16px; }
+  .lightbox.open { display:flex; }
+  .lightbox img { max-width:min(92vw, 540px); max-height:76vh; width:auto; height:auto; object-fit:contain; border-radius:12px; box-shadow:0 18px 50px rgba(0,0,0,.45); }
+  .lightbox .lcap { color:#FFF7E2; margin-top:15px; font-size:17.5px; font-weight:700; text-align:center; line-height:1.45; }
+  .lightbox .lclose { position:absolute; top:16px; right:16px; width:44px; height:44px; border-radius:50%; border:2px solid var(--gold); background:var(--green-dark); color:#FFF7E2; font-size:22px; line-height:1; cursor:pointer; font-family:inherit; }
+  .lightbox .lclose:focus-visible { outline:3px solid var(--gold-light); outline-offset:2px; }
+
+  @media (max-width: 900px){
+    .ggrid{ grid-template-columns:repeat(2, 1fr); }
+  }
+  @media (max-width: 480px){
+    .gallery h2{ font-size:25px; }
+    .ggrid{ gap:10px; }
+    .gcard figcaption{ padding:9px 7px 11px; }
+    .gcard figcaption span{ font-size:13.5px; }
+    .gcard figcaption .gtap{ font-size:10px; }
+  }
+
+  /* treatment menu */
+  .menu { margin-top:26px; }
+  .menu h2 { text-align:center; font-family:'Noto Serif', serif; font-size:30px; color:var(--green); letter-spacing:2px; }
+  .menu h2 small { display:block; font-family:'Noto Sans', sans-serif; font-size:14px; letter-spacing:4px; color:var(--gold); margin-top:4px; font-weight:700; }
+  .langbar { margin-top:14px; display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+  .langbar button {
+    font-family:inherit; font-size:14.5px; font-weight:700; letter-spacing:.5px;
+    color:var(--green); background:rgba(255,255,255,.9); border:1.5px solid var(--border);
+    padding:8px 16px; border-radius:999px; cursor:pointer;
+    transition:background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .langbar button:hover{ border-color:var(--gold); }
+  .langbar button[aria-pressed="true"]{ background:var(--green); color:#FFF7E2; border-color:var(--green-dark); }
+  .langbar button:focus-visible{ outline:3px solid var(--gold); outline-offset:2px; }
+  /* top language switcher — visible immediately on arrival, mirrors the menu one */
+  .langbar-top { margin-top:18px; gap:10px; }
+  .langbar-top button { font-size:16.5px; padding:11px 24px; box-shadow:0 4px 14px rgba(58,36,19,.12); }
+  @media (max-width: 480px){
+    .langbar-top{ gap:8px; }
+    .langbar-top button{ font-size:15px; padding:9px 18px; }
+  }
+  .menu [data-lang]{ display:none; }
+  .menu[data-active="en"] [data-lang="en"],
+  .menu[data-active="vi"] [data-lang="vi"],
+  .menu[data-active="ja"] [data-lang="ja"],
+  .menu[data-active="ko"] [data-lang="ko"],
+  .menu[data-active="zh"] [data-lang="zh"]{ display:block; }
+  .menu [data-lang].inl{ display:none; }
+  .menu[data-active="en"] [data-lang="en"].inl,
+  .menu[data-active="vi"] [data-lang="vi"].inl,
+  .menu[data-active="ja"] [data-lang="ja"].inl,
+  .menu[data-active="ko"] [data-lang="ko"].inl,
+  .menu[data-active="zh"] [data-lang="zh"].inl{ display:inline; }
+  .mgroup { margin-top:22px; }
+  .mgroup > h3 {
+    font-family:'Noto Serif', serif; font-size:22px; color:var(--cream);
+    background:var(--green); border-radius:10px; padding:10px 18px; letter-spacing:1px;
+  }
+  .mgroup > h3 small{ font-family:'Noto Sans', sans-serif; font-size:13px; letter-spacing:3px; color:var(--gold-light); font-weight:700; margin-left:10px; }
+  .svcgrid { margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .svc { background:rgba(255,255,255,.88); border:1.5px solid var(--border); border-top:5px solid var(--gold);
+         border-radius:14px; padding:16px 18px 14px; }
+  .svc.wide { grid-column:1 / -1; }
+  .svc h4 { font-family:'Noto Serif', serif; font-size:20px; font-weight:700; color:var(--green); line-height:1.3; }
+  .svc .desc { margin-top:7px; font-size:14.5px; line-height:1.6; color:var(--muted); }
+  .svc .prices { margin-top:11px; display:flex; flex-wrap:wrap; gap:7px; }
+  .svc .price {
+    display:inline-flex; align-items:baseline; gap:7px;
+    background:rgba(250,245,236,.9); border:1px solid var(--border); border-radius:999px; padding:5px 13px;
+  }
+  .svc .price .mins { font-size:13px; font-weight:700; color:var(--green); letter-spacing:.5px; white-space:nowrap; }
+  .svc .price .amt { font-size:16.5px; font-weight:800; color:var(--gold-dark); white-space:nowrap; }
+  .menunotes {
+    margin-top:16px; background:rgba(250,245,236,.88); border:1.5px dashed var(--gold); border-radius:14px;
+    padding:13px 20px; text-align:center; font-size:15.5px; line-height:1.65; color:var(--muted);
+  }
+  .menunotes b { color:var(--green); }
+
+  /* booking strip */
+  .book { margin-top:16px; background:rgba(255,255,255,.9); border:1.5px solid var(--border); border-left:6px solid var(--green);
+          border-radius:14px; padding:16px 22px 14px; display:block; }
+  .book h3 { font-size:16px; letter-spacing:2.5px; color:var(--green); font-weight:800; text-align:center; line-height:1.6; }
+  .book h3 span { color:var(--gold); }
+  .book p { font-size:15.5px; line-height:1.55; color:var(--muted); margin-top:6px; text-align:center; }
+  .book p b { color:var(--green); }
+  .book .book-hint{ text-align:center; margin-top:10px; }
+  .book .book-btn{
+    display:inline-block; background:var(--green); color:#FFF7E2; font-weight:800; letter-spacing:1px;
+    font-size:15px; padding:9px 22px; border-radius:999px;
+  }
+  .book .book-btn:hover{ background:#4A2C14; }
+  .book .fallback{ margin-top:12px; border-top:1px dashed var(--border); padding-top:10px; font-size:13.5px; line-height:1.6; }
+  .book .fallback a{ color:var(--gold-dark); font-weight:800; border-bottom:1.5px dotted var(--gold); white-space:nowrap; }
+  .book .fallback a:hover{ color:var(--green); }
+
+  /* info + owner */
+  .inforow { margin-top:16px; display:flex; gap:12px; align-items:stretch; }
+  .info { flex:1.9; background:linear-gradient(135deg, #241407 0%, #3A2413 55%, #4A2C14 100%); color:#F5EDD6; border-radius:14px; padding:16px 22px; font-size:20px; line-height:1.55; position:relative; overflow:hidden; }
+  /* Sheer bamboo watermark, as on the namecard front */
+  .info::after { content:""; position:absolute; right:-34px; top:50%; transform:translateY(-50%);
+                 width:190px; height:190px; background:url('assets/asset-03.png') center/contain no-repeat;
+                 opacity:.13; pointer-events:none; }
+  .info > div { position:relative; z-index:1; }
+  .info b { color:var(--gold-light); }
+  .info a{ border-bottom:1.5px dotted rgba(233,205,138,.65); padding-bottom:1px; transition:color .15s ease, border-color .15s ease; }
+  .info a:hover{ color:#fff; border-bottom-color:#fff; }
+  .info .hot { margin-top:4px; font-size:22px; }
+  .owner { flex:1; background:rgba(255,255,255,.9); border:1.5px solid var(--border); border-radius:14px;
+           display:flex; align-items:center; gap:14px; padding:12px 18px; }
+  .owner img { width:82px; height:82px; border-radius:50%; object-fit:cover; object-position:center 22%; border:3px solid var(--gold); flex:none; }
+  .owner .nm { font-family:'Noto Serif', serif; font-size:19px; font-weight:700; color:var(--green); line-height:1.3; }
+  .owner .rl { font-size:14px; color:var(--gold-dark); letter-spacing:1px; margin-top:2px; }
+
+  /* bottom: map + QR */
+  .bottom { margin-top:18px; display:flex; gap:14px; }
+  .mapbox { flex:1.35; min-width:0; }
+  .mapbox .cap, .qrbox .cap { font-size:15px; letter-spacing:3px; font-weight:700; color:var(--gold-dark); margin-bottom:7px; text-align:center; line-height:1.5; }
+  a.maplink{ display:block; border-radius:14px; }
+  .mapbox .mapsvg { width:100%; height:auto; border-radius:14px; border:1.5px solid var(--border); display:block; transition:box-shadow .18s ease; }
+  a.maplink:hover .mapsvg{ box-shadow:0 10px 28px rgba(58,36,19,.24); }
+  .mapbox .addr { text-align:center; margin-top:9px; font-size:17.5px; font-weight:700; color:var(--green); line-height:1.5; }
+  .mapbox .addr a{ border-bottom:1.5px dotted var(--gold); }
+  .mapbox .addr a:hover{ color:var(--gold-dark); }
+  .qrbox { flex:1; min-width:0; }
+  .qrgrid { display:grid; grid-template-columns:1fr 1fr; gap:11px; }
+  .qrcell { background:rgba(255,255,255,.92); border:1.5px solid var(--border); border-radius:14px; padding:10px 8px 8px; text-align:center; display:block; }
+  .qrcell:hover{ border-color:var(--gold); transform:translateY(-2px); }
+  .qrcell img { width:118px; height:118px; max-width:100%; }
+  .qrcell .lb { margin-top:4px; font-size:15px; font-weight:700; color:var(--green); line-height:1.35; }
+  .qrcell .lb small { display:block; font-size:12.5px; color:var(--gold-dark); font-weight:600; margin-top:2px; }
+  .qrcell .open { display:block; margin-top:5px; font-size:11.5px; font-weight:700; letter-spacing:1.5px; color:var(--gold); }
+
+  /* footer */
+  .footer { margin-top:22px; background:linear-gradient(135deg, #241407 0%, #3A2413 55%, #4A2C14 100%); color:#EDE3C8; text-align:center;
+            padding:16px 20px 18px; font-size:17px; letter-spacing:.5px; line-height:1.7;
+            margin-left:-48px; margin-right:-48px; position:relative; overflow:hidden; z-index:0; }
+  /* Sheer bamboo watermark, as on the namecard front */
+  .footer::before { content:""; position:absolute; right:-26px; top:50%; transform:translateY(-50%); z-index:-1;
+                    width:170px; height:170px; background:url('assets/asset-03.png') center/contain no-repeat;
+                    opacity:.10; pointer-events:none; }
+  .footer b { color:var(--gold-light); }
+  .footer a{ border-bottom:1.5px dotted rgba(233,205,138,.6); }
+  .footer a:hover{ color:#fff; border-bottom-color:#fff; }
+
+  /* sticky mobile book bar */
+  .stickybar{
+    display:none;
+    position:fixed; left:0; right:0; bottom:0; z-index:50;
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(36,20,7,.97);
+    box-shadow:0 -6px 24px rgba(0,0,0,.4);
+  }
+  .stickybar a{
+    display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap;
+    background:var(--gold); color:var(--green-dark);
+    font-size:17px; font-weight:800; letter-spacing:.5px;
+    padding:13px 18px; border-radius:999px; text-align:center;
+  }
+  .stickybar a .langs{ font-size:13.5px; font-weight:700; letter-spacing:2px; opacity:.85; }
+  .stickybar a:active{ background:var(--gold-light); }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; }
+    html{ scroll-behavior:auto; }
+  }
+
+  /* ---------- tablet / mobile ---------- */
+  @media (max-width: 900px){
+    .page{ padding:22px 20px 0 20px; }
+    .footer{ margin-left:-20px; margin-right:-20px; }
+    .band h1{ font-size:44px; }
+    .band .date{ font-size:21px; }
+    .band .inner{ padding:20px 136px 20px 22px; }
+    .band-badge{ width:108px; height:108px; right:16px; }
+    .band-badge .bb-num{ font-size:35px; }
+    .band-badge .bb-off{ font-size:15px; }
+    .band-badge .bb-when{ font-size:10px; }
+    .hero{ height:210px; }
+    .row2{ height:150px; }
+    .svcgrid{ grid-template-columns:1fr; }
+    .inforow{ flex-direction:column; }
+    .info{ font-size:18px; }
+    .info .hot{ font-size:20px; }
+    .bottom{ flex-direction:column; }
+    .stickybar{ display:block; }
+    body{ padding-bottom:84px; }
+  }
+  @media (max-width: 480px){
+    .tagline{ font-size:15px; letter-spacing:4px; }
+    .band h1{ font-size:36px; }
+    .band .kicker{ font-size:14px; letter-spacing:4px; }
+    .band .date{ font-size:18px; }
+    .band .multi{ font-size:14px; letter-spacing:2px; }
+    .slogan{ font-size:18px; }
+    .band-badge{ width:94px; height:94px; right:10px; }
+    .band-badge .bb-num{ font-size:30px; }
+    .band-badge .bb-off{ font-size:13px; letter-spacing:2px; }
+    .band-badge .bb-when{ font-size:9px; }
+    .band .inner{ padding-right:114px; }
+    .promo{ padding:20px 14px 22px; }
+    .promo .promo-kicker{ font-size:13.5px; letter-spacing:2.5px; }
+    .promo .promo-sub{ font-size:16.5px; letter-spacing:1px; }
+    .promo::before{ left:10px; }
+    .promo::after{ right:10px; }
+    .cta-btn{ font-size:17px; padding:14px 22px; width:100%; }
+    .hero{ height:180px; }
+    .row2{ flex-direction:column; height:auto; }
+    .row2 .a, .row2 .b{ flex:none; height:150px; }
+    .menu h2{ font-size:25px; }
+    .mgroup > h3{ font-size:19px; }
+    .svc h4{ font-size:18px; }
+    .menunotes{ font-size:14.5px; }
+    .book p{ font-size:14.5px; }
+    .qrcell img{ width:104px; height:104px; }
+    .footer{ font-size:15px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <img class="logo" src="assets/asset-04.jpg" alt="TRE SPA logo">
+    <div class="tagline">THÂN – TÂM – TRÍ AN YÊN</div>
+  </div>
+
+  <div class="langbar langbar-top" role="group" aria-label="Language">
+    <button type="button" data-setlang="en" aria-pressed="true">English</button>
+    <button type="button" data-setlang="vi" aria-pressed="false">Tiếng Việt</button>
+    <button type="button" data-setlang="ja" aria-pressed="false">日本語</button>
+    <button type="button" data-setlang="ko" aria-pressed="false">한국어</button>
+    <button type="button" data-setlang="zh" aria-pressed="false">中文</button>
+  </div>
+
+  <div class="band">
+    <div class="overlay"></div>
+    <div class="inner">
+      <div class="kicker">KHAI TRƯƠNG • DA NANG</div>
+      <h1>GRAND OPENING</h1>
+      <div class="date">Tuesday, <span>November 24, 2026</span> • Thứ Ba, 24/11/2026</div>
+      <div class="multi">그랜드 오픈 • グランドオープン • 盛大开业</div>
+    </div>
+    <div class="band-badge" role="note" aria-label="30% off all services, November 24–30, 2026"><span class="bb-num">30%</span><span class="bb-off">OFF</span><span class="bb-when">ALL SERVICES<br>Nov 24–30</span></div>
+  </div>
+
+  <div class="promo" id="promo" data-active="en" role="note" aria-label="Grand opening promotion — 30% off all services, November 24–30, 2026">
+    <div data-lang="en">
+      <div class="promo-kicker">GRAND OPENING SPECIAL — OPENING WEEK ONLY</div>
+      <div class="promo-big">30% OFF</div>
+      <div class="promo-sub">ALL SERVICES • Nov 24–30, 2026</div>
+    </div>
+    <div data-lang="vi">
+      <div class="promo-kicker">ƯU ĐÃI KHAI TRƯƠNG — CHỈ TRONG TUẦN KHAI TRƯƠNG</div>
+      <div class="promo-big">GIẢM 30%</div>
+      <div class="promo-sub">TẤT CẢ DỊCH VỤ • 24–30/11/2026</div>
+    </div>
+    <div data-lang="ja">
+      <div class="promo-kicker">グランドオープン記念 — オープン週限定</div>
+      <div class="promo-big">30% OFF</div>
+      <div class="promo-sub">全サービス対象 • 2026年11月24日〜30日</div>
+    </div>
+    <div data-lang="ko">
+      <div class="promo-kicker">그랜드 오픈 기념 — 오픈 주간 한정</div>
+      <div class="promo-big">30% 할인</div>
+      <div class="promo-sub">전 서비스 • 2026년 11월 24일–30일</div>
+    </div>
+    <div data-lang="zh">
+      <div class="promo-kicker">盛大开业优惠 — 开业周限定</div>
+      <div class="promo-big">30% OFF</div>
+      <div class="promo-sub">所有项目 • 2026年11月24日–30日</div>
+    </div>
+  </div>
+
+  <div class="slogan">“Chạm vào sự thư thái — Đánh thức năng lượng từ thiên nhiên”</div>
+
+  <div class="cta-row">
+    <a class="cta-btn clickable" href="https://www.facebook.com/profile.php?id=61596009494641&amp;sk=bookings" target="_blank" rel="noopener" aria-label="Book now — TRE SPA booking page on Facebook">
+      <span>📅 Book Now</span>
+      <span class="langs">예약 • 予約 • 预约 • Đặt lịch</span>
+    </a>
+  </div>
+
+  <div class="hero"><img src="assets/asset-05.jpg" alt="Reception at TRE SPA — bamboo wall with the illuminated TRE SPA sign"></div>
+  <div class="row2">
+    <div class="a"><img src="assets/asset-06.jpg" alt="Head spa room at TRE SPA with shampoo beds"></div>
+    <div class="b"><img src="assets/asset-07.jpg" alt="Waiting lounge at TRE SPA with a sofa and bamboo blinds"></div>
+  </div>
+
+  <section class="about" id="about" data-active="en" aria-label="About TRE SPA">
+    <h2><span class="inl" data-lang="en">About TRE SPA</span><span class="inl" data-lang="vi">Về TRE SPA</span><span class="inl" data-lang="ja">TRE SPAについて</span><span class="inl" data-lang="ko">About TRE SPA</span><span class="inl" data-lang="zh">About TRE SPA</span><small>
+      <span class="inl" data-lang="en">FROM OUR OWNER, LIEU</span><span class="inl" data-lang="vi">LỜI CỦA CHỦ SPA — LIEU</span><span class="inl" data-lang="ja">オーナー Lieu の言葉</span><span class="inl" data-lang="ko">FROM OUR OWNER, LIEU</span><span class="inl" data-lang="zh">FROM OUR OWNER, LIEU</span>
+    </small></h2>
+    <div class="about-card">
+      <img class="about-photo" src="assets/asset-08.jpg" alt="Lieu, Owner of TRE SPA">
+      <div class="about-text">
+        <div data-lang="en">
+          <p>TRE SPA was created as a place where you can set down the tiredness of everyday life for a while, take time to care for yourself, and find balance again — in body and in mind.</p>
+          <p>We are not simply a place that provides massage services. TRE SPA is a space for health care and relaxation, where every guest can feel genuine, heartfelt care.</p>
+          <p>Our name comes from “tre” — bamboo, an image so close to Vietnam. Bamboo symbolises flexibility and humility: simple, yet incredibly strong. That is the spirit we carry: simple but refined, gentle but with inner strength, always growing, yet never losing our own identity.</p>
+          <p class="sign">— Lieu, Owner</p>
+          <p class="aline">TRE SPA — Bamboo Wellness &amp; Relaxation<br>247 Tran Phu, Hai Chau, Da Nang / Open daily 09:00–22:00 / Grand Opening Nov 24, 2026</p>
+        </div>
+        <div data-lang="vi">
+          <p>TRE SPA được tạo nên như một nơi để bạn tạm gác lại những mệt mỏi của cuộc sống, dành thời gian chăm sóc bản thân và tìm lại sự cân bằng cho cả cơ thể lẫn tinh thần.</p>
+          <p>Chúng tôi không chỉ đơn thuần là một nơi cung cấp dịch vụ massage. TRE SPA là một không gian chăm sóc sức khỏe và thư giãn, nơi mỗi vị khách đều cảm nhận được sự quan tâm chân thành.</p>
+          <p>Tên gọi của chúng tôi bắt nguồn từ “tre” — hình ảnh rất gần gũi với Việt Nam. Cây tre tượng trưng cho sự mềm dẻo, khiêm nhường, giản dị nhưng vô cùng mạnh mẽ. Đó cũng là tinh thần mà TRE SPA mang theo: giản dị nhưng tinh tế, nhẹ nhàng nhưng có nội lực, luôn phát triển nhưng không đánh mất bản sắc của mình.</p>
+          <p class="sign">— Lieu, Chủ TRE SPA</p>
+          <p class="aline">TRE SPA — Bamboo Wellness &amp; Relaxation<br>247 Trần Phú, Hải Châu, Đà Nẵng / Mở cửa hằng ngày 09:00–22:00 / Khai trương 24/11/2026</p>
+        </div>
+        <div data-lang="ja">
+          <p>TRE SPAは、生活の疲れをひととき置いて、自分をケアする時間を持ち、体と心のバランスを取り戻せる場所として生まれました。</p>
+          <p>私たちは、ただマッサージのサービスを提供するだけの場所ではありません。TRE SPAは、健康のケアとリラックスのための空間であり、お客様一人ひとりに真心のこもった気配りを感じていただける場所です。</p>
+          <p>店名は「tre（竹）」に由来します。竹はベトナムにとても身近な存在で、しなやかさ、謙虚さ、質素でありながらとても強いことの象徴です。その精神が私たちのものです。質素だけど洗練されていて、穏やかだけど内側に力を持ち、成長し続けても自分らしさを失わないこと。</p>
+          <p class="sign">— オーナー Lieu</p>
+          <p class="aline">TRE SPA — Bamboo Wellness &amp; Relaxation<br>247 Tran Phu, Hai Chau, Da Nang / 毎日 09:00–22:00 / 2026年11月24日グランドオープン</p>
+        </div>
+        <div data-lang="ko">
+          <p>TRE SPA was created as a place where you can set down the tiredness of everyday life for a while, take time to care for yourself, and find balance again — in body and in mind.</p>
+          <p>We are not simply a place that provides massage services. TRE SPA is a space for health care and relaxation, where every guest can feel genuine, heartfelt care.</p>
+          <p>Our name comes from “tre” — bamboo, an image so close to Vietnam. Bamboo symbolises flexibility and humility: simple, yet incredibly strong. That is the spirit we carry: simple but refined, gentle but with inner strength, always growing, yet never losing our own identity.</p>
+          <p class="sign">— Lieu, Owner</p>
+          <p class="aline">TRE SPA — Bamboo Wellness &amp; Relaxation<br>247 Tran Phu, Hai Chau, Da Nang / Open daily 09:00–22:00 / Grand Opening Nov 24, 2026</p>
+        </div>
+        <div data-lang="zh">
+          <p>TRE SPA was created as a place where you can set down the tiredness of everyday life for a while, take time to care for yourself, and find balance again — in body and in mind.</p>
+          <p>We are not simply a place that provides massage services. TRE SPA is a space for health care and relaxation, where every guest can feel genuine, heartfelt care.</p>
+          <p>Our name comes from “tre” — bamboo, an image so close to Vietnam. Bamboo symbolises flexibility and humility: simple, yet incredibly strong. That is the spirit we carry: simple but refined, gentle but with inner strength, always growing, yet never losing our own identity.</p>
+          <p class="sign">— Lieu, Owner</p>
+          <p class="aline">TRE SPA — Bamboo Wellness &amp; Relaxation<br>247 Tran Phu, Hai Chau, Da Nang / Open daily 09:00–22:00 / Grand Opening Nov 24, 2026</p>
+        </div>
+      </div>
+    </div>
+    <div class="voice-block">
+      <h3 class="voice-title"><span class="inl" data-lang="en">Messages from Lieu</span><span class="inl" data-lang="vi">Lời nhắn từ chị Lieu</span><span class="inl" data-lang="ja">オーナー Lieu からのメッセージ</span><span class="inl" data-lang="ko">Lieu의 메시지</span><span class="inl" data-lang="zh">来自 Lieu 的留言</span></h3>
+      <div class="voice-list">
+        <div class="voice-item">
+          <div class="voice-head">
+            <span class="voice-num" aria-hidden="true">1</span>
+            <div class="voice-caps">
+              <p class="voice-cap" data-lang="en">Why I opened TRE SPA — and why ‘TRE’</p>
+              <p class="voice-cap" data-lang="vi">Vì sao em mở TRE SPA — và vì sao là ‘TRE’</p>
+              <p class="voice-cap" data-lang="ja">なぜTRE SPAを開いたか ― なぜ「TRE」なのか</p>
+              <p class="voice-cap" data-lang="ko">Why I opened TRE SPA — and why ‘TRE’</p>
+              <p class="voice-cap" data-lang="zh">Why I opened TRE SPA — and why ‘TRE’</p>
+            </div>
+          </div>
+          <div class="transcript-wrap">
+            <button type="button" class="transcript-toggle" aria-expanded="false"><span class="inl" data-lang="en">Read message</span><span class="inl" data-lang="vi">Đọc lời nhắn</span><span class="inl" data-lang="ja">メッセージを読む</span><span class="inl" data-lang="ko">메시지 읽기</span><span class="inl" data-lang="zh">阅读留言</span><span class="chev" aria-hidden="true">▾</span></button>
+            <div class="transcript-panel" hidden>
+              <div class="transcript-body" data-lang="en"><p>Why did I want to open a spa, and why did I choose the name Tre Spa?</p><p>I wanted to build a place where people can set down the tiredness of everyday life for a while, take time to care for themselves, and find balance again — in both body and mind.</p><p>I don't want Tre Spa to be simply a place that provides massage services. I want it to become a space for health care and relaxation, where every guest can feel genuine, heartfelt care.</p><p>I chose the name Tre Spa because bamboo — "tre" — is an image so close to Vietnam. Bamboo symbolises flexibility and humility: simple, yet incredibly strong.</p><p>I want Tre Spa to carry that same spirit: simple but refined, gentle but with inner strength, always growing, yet never losing its own identity.</p></div>
+              <div class="transcript-body" data-lang="vi"><p>Vì sao em muốn mở một spa, và vì sao lại chọn tên Tre Spa?</p><p>Em muốn xây dựng một nơi mà mọi người có thể tạm gác lại những mệt mỏi của cuộc sống, dành thời gian chăm sóc bản thân và tìm lại sự cân bằng cho cả cơ thể lẫn tinh thần.</p><p>Em không muốn Tre Spa chỉ đơn thuần là một nơi cung cấp dịch vụ massage. Em muốn nơi đây trở thành một không gian chăm sóc sức khỏe và thư giãn, nơi mỗi vị khách đều cảm nhận được sự quan tâm chân thành.</p><p>Em chọn tên Tre Spa vì tre là hình ảnh rất gần gũi với Việt Nam. Cây tre tượng trưng cho sự mềm dẻo, khiêm nhường, giản dị nhưng vô cùng mạnh mẽ.</p><p>Em muốn Tre Spa cũng mang tinh thần ấy: giản dị nhưng tinh tế, nhẹ nhàng nhưng có nội lực, luôn phát triển nhưng không đánh mất bản sắc của mình.</p></div>
+              <div class="transcript-body" data-lang="ja"><p>なぜスパを開きたいのか、なぜ「Tre Spa」という名前を選んだのか。</p><p>人々が生活の疲れをひととき置いて、自分をケアする時間を持ち、体と心の両方のバランスを取り戻せる場所を作りたいと思いました。</p><p>Tre Spaを、ただマッサージのサービスを提供するだけの場所にはしたくありません。ここを、健康のケアとリラックスのための空間にして、来てくださるお客様一人ひとりに、真心のこもった気配りを感じてほしいのです。</p><p>「Tre Spa」という名前を選んだのは、竹（tre）がベトナムにとても身近な存在だからです。竹は、しなやかさ、謙虚さ、質素でありながらとても強いことの象徴です。</p><p>Tre Spaもその精神でいたいと思います。質素だけど洗練されていて、穏やかだけど内側に力を持ち、成長し続けても自分らしさ（本質）を失わない店に。</p></div>
+              <div class="transcript-body" data-lang="ko"><p>일상의 피로를 내려놓고, 자신을 돌보며 몸과 마음의 균형을 되찾을 수 있는 공간을 만들고 싶었습니다. TRE SPA가 단순히 마사지 서비스를 제공하는 곳이 되기를 원하지 않습니다. 모든 손님이 진심 어린 배려를 느낄 수 있는 건강 케어와 휴식의 공간이 되기를 바랍니다. 'TRE(대나무)'라는 이름을 선택한 것은 대나무가 베트남과 매우 가깝기 때문입니다. 대나무는 유연함과 겸손함, 소박하지만 매우 강한 힘을 상징합니다. TRE SPA도 그런 정신을 담고 싶습니다. 소박하지만 세련되고, 부드럽지만 내면의 힘이 있으며, 계속 성장하면서도 자기다움을 잃지 않는 곳으로요.</p></div>
+              <div class="transcript-body" data-lang="zh"><p>我想打造一个地方，让人们可以放下日常的疲惫，花时间照顾自己，重新找回身心的平衡。我不希望 TRE SPA 只是一个提供按摩服务的地方，而是一个健康护理与放松的空间，让每一位客人都能感受到真诚的关怀。我选择“TRE（竹）”这个名字，是因为竹子与越南非常亲近。竹子象征着柔韧、谦逊——朴素，却无比坚强。我希望 TRE SPA 也拥有同样的精神：朴素而精致，温柔而内在有力，不断成长，却不失去自己的本色。</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="voice-item">
+          <div class="voice-head">
+            <span class="voice-num" aria-hidden="true">2</span>
+            <div class="voice-caps">
+              <p class="voice-cap" data-lang="en">What I want you to feel when you leave</p>
+              <p class="voice-cap" data-lang="vi">Điều em muốn khách cảm nhận khi rời khỏi spa</p>
+              <p class="voice-cap" data-lang="ja">お客様に感じてほしいこと</p>
+              <p class="voice-cap" data-lang="ko">What I want you to feel when you leave</p>
+              <p class="voice-cap" data-lang="zh">What I want you to feel when you leave</p>
+            </div>
+          </div>
+          <div class="transcript-wrap">
+            <button type="button" class="transcript-toggle" aria-expanded="false"><span class="inl" data-lang="en">Read message</span><span class="inl" data-lang="vi">Đọc lời nhắn</span><span class="inl" data-lang="ja">メッセージを読む</span><span class="inl" data-lang="ko">메시지 읽기</span><span class="inl" data-lang="zh">阅读留言</span><span class="chev" aria-hidden="true">▾</span></button>
+            <div class="transcript-panel" hidden>
+              <div class="transcript-body" data-lang="en"><p>When guests leave TRE SPA, I want them to feel not only lighter in their body, but relaxed in their mind too.</p><p>I want them to feel that their body has been cared for and their tension released, their mind at peace — and that they were welcomed with sincerity and respect.</p><p>I want the time they spent at TRE SPA to feel truly worth what they paid.</p><p>Most of all, I want every guest to walk out with a smile.</p></div>
+              <div class="transcript-body" data-lang="vi"><p>Em muốn khi rời khỏi Tre Spa, khách hàng không chỉ cảm thấy cơ thể nhẹ nhàng hơn, mà tâm trí cũng được thư giãn.</p><p>Em muốn họ cảm nhận rằng cơ thể được chăm sóc và giải tỏa căng thẳng, tâm trí trở nên bình yên. Họ được đón tiếp bằng sự chân thành và tôn trọng.</p><p>Quãng thời gian ở Tre Spa thật sự rất xứng đáng với những gì họ đã bỏ ra.</p><p>Điều em muốn nhất là khách hàng bước ra với một nụ cười.</p></div>
+              <div class="transcript-body" data-lang="ja"><p>お客様がTRE SPAを出る時、体が軽くなるだけでなく、心もほぐれていてほしいと思います。</p><p>体がケアされて緊張が解け、心が穏やかになる。真心と敬意を持って迎えられた、と感じてほしいのです。</p><p>TRE SPAで過ごした時間が、支払った分に十分見合うものだったと思ってほしい。</p><p>私が一番望むのは、お客様が笑顔で店を出ていくことです。</p></div>
+              <div class="transcript-body" data-lang="ko"><p>TRE SPA를 떠나실 때, 몸이 가벼워지는 것뿐만 아니라 마음도 편안해지셨으면 합니다. 몸이 케어받고 긴장이 풀리며 마음이 평온해지는 것, 그리고 진심과 존중으로 맞이받았다고 느끼셨으면 합니다. 이곳에서 보내신 시간이 지불하신 금액만큼 충분히 가치 있었다고 느끼셨으면 합니다. 무엇보다 모든 손님이 미소를 지으며 나가시기를 바랍니다.</p></div>
+              <div class="transcript-body" data-lang="zh"><p>当您离开 TRE SPA 时，我希望您不仅身体变得轻松，心灵也能得到放松。希望您感受到身体被悉心照料、紧张得以释放、心境变得平和——并感受到我们真诚而尊重的接待。希望您在这里度过的时间，真正值得您所付出的。最重要的是，我希望每一位客人都能带着微笑离开。</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="voice-item">
+          <div class="voice-head">
+            <span class="voice-num" aria-hidden="true">3</span>
+            <div class="voice-caps">
+              <p class="voice-cap" data-lang="en">What I never compromise on: respect</p>
+              <p class="voice-cap" data-lang="vi">Điều em không bao giờ thỏa hiệp: sự tôn trọng</p>
+              <p class="voice-cap" data-lang="ja">絶対に妥協しないこと ― 敬意</p>
+              <p class="voice-cap" data-lang="ko">What I never compromise on: respect</p>
+              <p class="voice-cap" data-lang="zh">What I never compromise on: respect</p>
+            </div>
+          </div>
+          <div class="transcript-wrap">
+            <button type="button" class="transcript-toggle" aria-expanded="false"><span class="inl" data-lang="en">Read message</span><span class="inl" data-lang="vi">Đọc lời nhắn</span><span class="inl" data-lang="ja">メッセージを読む</span><span class="inl" data-lang="ko">메시지 읽기</span><span class="inl" data-lang="zh">阅读留言</span><span class="chev" aria-hidden="true">▾</span></button>
+            <div class="transcript-panel" hidden>
+              <div class="transcript-body" data-lang="en"><p>What I never compromise on is respect. Never make a guest feel judged, lacking in privacy, or uncomfortable while being cared for.</p><p>If I had to choose one most important principle, it is this: never turn a guest's body and trust into a place where we do careless work.</p><p>Because a guest may not remember exactly how many movements the therapist performed — but they will clearly remember the feeling they received throughout the treatment.</p><p>That is the respect I want TRE SPA to build.</p></div>
+              <div class="transcript-body" data-lang="vi"><p>Không thỏa hiệp về sự tôn trọng. Không làm khách cảm thấy bị phán xét, thiếu riêng tư, hoặc không thoải mái khi được chăm sóc.</p><p>Nhưng nếu phải chọn một nguyên tắc quan trọng, thì em sẽ chọn: đừng bao giờ biến cơ thể và niềm tin của khách hàng thành nơi để chúng ta làm việc qua loa.</p><p>Bởi vì khách hàng có thể không nhớ chính xác kỹ thuật viên đã thực hiện bao nhiêu động tác, nhưng họ sẽ nhớ rất rõ cảm giác mà họ nhận được trong suốt buổi trị liệu.</p><p>Đó là sự tôn trọng mà em muốn Tre Spa xây dựng.</p></div>
+              <div class="transcript-body" data-lang="ja"><p>妥協しないのは「敬意」です。お客様に、ジャッジされている、プライバシーがない、ケアの最中に居心地が悪い、と感じさせないこと。</p><p>一番大切な原則を一つ選ぶなら、これです。お客様の体と信頼を、私たちが手を抜いて仕事をする場所にしてはいけない。</p><p>お客様は、セラピストが何回手技を行ったか正確には覚えていないかもしれません。でも、施術の間ずっと受けていた「感覚」は、はっきりと覚えています。</p><p>それが、TRE SPAが築きたい敬意です。</p></div>
+              <div class="transcript-body" data-lang="ko"><p>제가 절대 타협하지 않는 것은 존중입니다. 손님이 평가받고 있다고 느끼거나, 프라이버시가 부족하다고 느끼거나, 케어를 받는 동안 불편함을 느끼게 해서는 안 됩니다. 가장 중요한 원칙을 하나 꼽자면, 손님의 몸과 신뢰를 우리가 대충 일하는 장소로 만들어서는 안 된다는 것입니다. 손님은 테라피스트가 몇 번의 동작을 했는지 정확히 기억하지 못할 수 있지만, 시술 내내 받은 '느낌'은 분명히 기억합니다. 그것이 TRE SPA가 쌓아가고 싶은 존중입니다.</p></div>
+              <div class="transcript-body" data-lang="zh"><p>我绝不妥协的是尊重。不能让客人感到被评判、缺乏隐私，或在护理过程中感到不自在。如果要选一个最重要的原则，那就是：绝不能把客人的身体和信任，变成我们敷衍工作的地方。客人也许记不清治疗师做了多少个动作，但会清楚地记得在整个疗程中所感受到的。那就是我想在 TRE SPA 建立的尊重。</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="voice-item">
+          <div class="voice-head">
+            <span class="voice-num" aria-hidden="true">4</span>
+            <div class="voice-caps">
+              <p class="voice-cap" data-lang="en">The guests I especially want to welcome</p>
+              <p class="voice-cap" data-lang="vi">Những vị khách em đặc biệt muốn đón tiếp</p>
+              <p class="voice-cap" data-lang="ja">特に迎えたいお客様</p>
+              <p class="voice-cap" data-lang="ko">The guests I especially want to welcome</p>
+              <p class="voice-cap" data-lang="zh">The guests I especially want to welcome</p>
+            </div>
+          </div>
+          <div class="transcript-wrap">
+            <button type="button" class="transcript-toggle" aria-expanded="false"><span class="inl" data-lang="en">Read message</span><span class="inl" data-lang="vi">Đọc lời nhắn</span><span class="inl" data-lang="ja">メッセージを読む</span><span class="inl" data-lang="ko">메시지 읽기</span><span class="inl" data-lang="zh">阅读留言</span><span class="chev" aria-hidden="true">▾</span></button>
+            <div class="transcript-panel" hidden>
+              <div class="transcript-body" data-lang="en"><p>TRE SPA can welcome everyone who needs care and relaxation, but I especially want to care for:</p><p>- Travelers who have just been through a long flight, who may be tired and need to restore their energy.</p><p>- Busy women who always give their time to work and family, but sometimes forget to care for themselves.</p><p>- People who are often stressed, with neck and shoulder tension from work and daily life.</p><p>Guests who come to Vietnam wanting to experience body care with a Vietnamese spirit, but with international service standards.</p><p>I want every guest to be listened to, and advised on the service that suits them — rather than only being introduced to the services the spa wants to sell.</p></div>
+              <div class="transcript-body" data-lang="vi"><p>Tre Spa có thể chào đón tất cả những ai cần được chăm sóc và thư giãn, nhưng em đặc biệt muốn quan tâm đến:</p><p>- Khách du lịch vừa trải qua chuyến bay dài, có thể mệt mỏi và cần phục hồi năng lượng.</p><p>- Những người phụ nữ bận rộn, luôn dành thời gian cho công việc và gia đình, nhưng đôi khi quên chăm sóc chính mình.</p><p>- Những người thường xuyên căng thẳng, mỏi cổ vai gáy do công việc và sinh hoạt.</p><p>Những vị khách đến Việt Nam muốn trải nghiệm dịch vụ chăm sóc cơ thể mang tinh thần Việt Nam, nhưng với tiêu chuẩn phục vụ quốc tế.</p><p>Em muốn mỗi vị khách đều được lắng nghe và tư vấn dịch vụ phù hợp, thay vì chỉ được giới thiệu những dịch vụ mà spa muốn bán.</p></div>
+              <div class="transcript-body" data-lang="ja"><p>TRE SPAは、ケアとリラックスを必要とするすべての方を歓迎できますが、特に大切にしたいのは次の方々です。</p><p>- 長いフライトの後で、疲れていてエネルギーの回復が必要な旅行者</p><p>- 仕事と家族にいつも時間を使い、時々自分のケアを忘れてしまう忙しい女性たち</p><p>- 仕事や生活のせいで、いつも緊張して首・肩が凝っている方々</p><p>ベトナムに来て、ベトナムの精神を持ちながら国際水準のサービスで体のケアを体験したいお客様。</p><p>私は、お客様一人ひとりの話を聞いて、その方に合うサービスを提案したいのです。スパが売りたいサービスだけを紹介するのではなく。</p></div>
+              <div class="transcript-body" data-lang="ko"><p>TRE SPA는 케어와 휴식이 필요한 모든 분을 환영할 수 있지만, 특히 이런 분들을 소중히 모시고 싶습니다. 긴 비행을 마치고 피곤하여 에너지 회복이 필요한 여행자분들. 일과 가정에 늘 시간을 쓰느라 때때로 자신을 돌보는 것을 잊는 바쁜 여성분들. 일과 생활 때문에 늘 긴장하고 목과 어깨가 뭉친 분들. 그리고 베트남에 오셔서 베트남의 정신을 담은 바디 케어를 국제적인 서비스 수준으로 경험하고 싶은 분들입니다. 저는 모든 손님의 이야기를 듣고 그분께 맞는 서비스를 제안하고 싶습니다. 스파가 팔고 싶은 서비스만을 소개하는 것이 아니라요.</p></div>
+              <div class="transcript-body" data-lang="zh"><p>TRE SPA 欢迎所有需要护理与放松的人，但我特别想照顾这些客人：刚经历长途飞行、感到疲惫、需要恢复精力的旅行者；总是把时间花在工作和家庭上、有时忘了照顾自己的忙碌女性；以及因工作和生活而经常紧张、颈肩僵硬的人。还有来到越南、想体验带有越南精神、同时具备国际服务标准的身体护理的客人。我希望倾听每一位客人的需求，为他们推荐合适的服务——而不是只介绍我们想卖的服务。</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="voice-item">
+          <div class="voice-head">
+            <span class="voice-num" aria-hidden="true">5</span>
+            <div class="voice-caps">
+              <p class="voice-cap" data-lang="en">What 'TRE' (bamboo) means</p>
+              <p class="voice-cap" data-lang="vi">Ý nghĩa của cây tre</p>
+              <p class="voice-cap" data-lang="ja">「TRE（竹）」の意味</p>
+              <p class="voice-cap" data-lang="ko">'TRE(대나무)'의 의미</p>
+              <p class="voice-cap" data-lang="zh">“TRE（竹）”的含义</p>
+            </div>
+          </div>
+          <div class="transcript-wrap">
+            <button type="button" class="transcript-toggle" aria-expanded="false"><span class="inl" data-lang="en">Read message</span><span class="inl" data-lang="vi">Đọc lời nhắn</span><span class="inl" data-lang="ja">メッセージを読む</span><span class="inl" data-lang="ko">메시지 읽기</span><span class="inl" data-lang="zh">阅读留言</span><span class="chev" aria-hidden="true">▾</span></button>
+            <div class="transcript-panel" hidden>
+              <div class="transcript-body" data-lang="en"><p>Why did I name it Tre Spa? Because of what bamboo symbolises.</p><p>First, resilience: bamboo can lean and sway, but it does not fall or break.</p><p>Second, unity: a single bamboo stalk may be weak, but a whole grove creates strength.</p><p>Third, bamboo has a powerful ability to grow and regenerate.</p><p>Fourth, humility: bamboo is simple and unpretentious, yet always useful.</p></div>
+              <div class="transcript-body" data-lang="vi"><p>Vì sao em lại đặt tên là Tre Spa? Là vì ý nghĩa biểu tượng của cây tre.</p><p>Thứ nhất, về sự kiên cường: cây tre có thể nghiêng, chao đảo nhưng không ngã đổ.</p><p>Thứ hai, về sự đoàn kết: một cây tre có thể yếu, nhưng cả lũy tre tạo thành sức mạnh.</p><p>Thứ ba, tre có khả năng sinh trưởng và tái tạo mạnh mẽ.</p><p>Thứ tư, sự khiêm nhường: tre bình dị, không phô trương, nhưng luôn có ích.</p></div>
+              <div class="transcript-body" data-lang="ja"><p>なぜ「Tre Spa」という名前にしたのか。それは竹という象徴の意味のためです。</p><p>第一に、しなやかな強さ。竹は傾いたり揺れたりしても、倒れたり折れたりしません。</p><p>第二に、団結。一本の竹は弱くても、竹林全体が力になります。</p><p>第三に、竹には力強く育ち、再生する力があります。</p><p>第四に、謙虚さ。竹は質素で、目立とうとしないけれど、いつも役に立っています。</p></div>
+              <div class="transcript-body" data-lang="ko"><p>왜 'TRE 스파'라는 이름을 지었을까요? 대나무가 상징하는 의미 때문입니다. 첫째, 강인함입니다. 대나무는 기울고 흔들려도 쓰러지지 않습니다. 둘째, 단결입니다. 대나무 한 줄기는 약할 수 있지만, 대나무 숲 전체는 힘이 됩니다. 셋째, 대나무는 강하게 자라고 재생하는 힘이 있습니다. 넷째, 겸손함입니다. 대나무는 소박하고 드러내지 않지만, 늘 쓸모가 있습니다.</p></div>
+              <div class="transcript-body" data-lang="zh"><p>为什么取名“TRE SPA”？因为竹子所象征的意义。第一，坚韧：竹子可以倾斜、摇晃，却不会倒下。第二，团结：一根竹子也许脆弱，但整片竹林汇聚成力量。第三，竹子具有强大的生长和再生能力。第四，谦逊：竹子朴素、不张扬，却总是很有用。</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery" data-active="en" aria-label="Inside TRE SPA — photo gallery">
+    <h2><span class="inl" data-lang="en">Inside TRE SPA</span><span class="inl" data-lang="vi">Không gian Tre Spa</span><span class="inl" data-lang="ja">店内のご案内</span><span class="inl" data-lang="ko">매장 안내</span><span class="inl" data-lang="zh">店内一览</span><small>
+      <span class="inl" data-lang="en">OUR ACTUAL ROOMS &amp; SPACES</span><span class="inl" data-lang="vi">KHÔNG GIAN THẬT CỦA SPA</span><span class="inl" data-lang="ja">実際の店内の様子</span><span class="inl" data-lang="ko">실제 매장 모습</span><span class="inl" data-lang="zh">店内实景</span>
+    </small></h2>
+    <p class="ghint" data-lang="en">A look inside before you visit — tap any photo to see it larger.</p>
+    <p class="ghint" data-lang="vi">Ngắm không gian thật trước khi ghé — chạm vào ảnh để xem lớn hơn.</p>
+    <p class="ghint" data-lang="ja">ご来店前に、実際の店内をご覧ください。写真をタップすると大きく表示されます。</p>
+    <p class="ghint" data-lang="ko">방문 전에 실제 매장을 둘러보세요. 사진을 누르면 크게 볼 수 있습니다.</p>
+    <p class="ghint" data-lang="zh">到店前先看看店内实景——点击任意照片可放大查看。</p>
+
+    <div class="ggrid">
+      <figure class="gcard">
+        <button type="button" class="gphoto" aria-label="View larger photo: Reception"><img src="assets/asset-05.jpg" alt="Reception at TRE SPA" loading="lazy"></button>
+        <figcaption><span data-lang="en">Reception</span><span data-lang="vi">Lễ tân</span><span data-lang="ja">受付</span><span data-lang="ko">리셉션</span><span data-lang="zh">前台</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
+      </figure>
+      <figure class="gcard">
+        <button type="button" class="gphoto" aria-label="View larger photo: Foot Massage Room"><img src="assets/asset-09.jpg" alt="Foot massage room at TRE SPA with reclining chairs" loading="lazy"></button>
+        <figcaption><span data-lang="en">Foot Massage Room</span><span data-lang="vi">Phòng massage chân</span><span data-lang="ja">フットマッサージルーム</span><span data-lang="ko">발 마사지룸</span><span data-lang="zh">足疗室</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
+      </figure>
+      <figure class="gcard">
+        <button type="button" class="gphoto" aria-label="View larger photo: Waiting Lounge"><img src="assets/asset-07.jpg" alt="Waiting lounge at TRE SPA" loading="lazy"></button>
+        <figcaption><span data-lang="en">Waiting Lounge</span><span data-lang="vi">Khu vực chờ</span><span data-lang="ja">待合ラウンジ</span><span data-lang="ko">대기 라운지</span><span data-lang="zh">等候区</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
+      </figure>
+      <figure class="gcard">
+        <button type="button" class="gphoto" aria-label="View larger photo: Head Spa Room"><img src="assets/asset-06.jpg" alt="Head spa room at TRE SPA with shampoo beds and privacy curtains" loading="lazy"></button>
+        <figcaption><span data-lang="en">Head Spa Room</span><span data-lang="vi">Phòng gội đầu dưỡng sinh</span><span data-lang="ja">ヘッドスパルーム</span><span data-lang="ko">헤드 스파룸</span><span data-lang="zh">养发头疗室</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
+      </figure>
+      <figure class="gcard">
+        <button type="button" class="gphoto" aria-label="View larger photo: Body Massage Room"><img src="assets/asset-10.jpg" alt="Body massage room at TRE SPA with a bamboo painting" loading="lazy"></button>
+        <figcaption><span data-lang="en">Body Massage Room</span><span data-lang="vi">Phòng massage body</span><span data-lang="ja">ボディマッサージルーム</span><span data-lang="ko">바디 마사지룸</span><span data-lang="zh">按摩房</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
+      </figure>
+      <figure class="gcard">
+        <button type="button" class="gphoto" aria-label="View larger photo: Body Massage Room"><img src="assets/asset-11.jpg" alt="Body massage room at TRE SPA with two beds" loading="lazy"></button>
+        <figcaption><span data-lang="en">Body Massage Room</span><span data-lang="vi">Phòng massage body</span><span data-lang="ja">ボディマッサージルーム</span><span data-lang="ko">바디 마사지룸</span><span data-lang="zh">按摩房</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
+      </figure>
+      <figure class="gcard">
+        <button type="button" class="gphoto" aria-label="View larger photo: Body Massage Room"><img src="assets/asset-12.jpg" alt="Body massage room at TRE SPA with warm lighting and the TRE SPA logo on the bed linen" loading="lazy"></button>
+        <figcaption><span data-lang="en">Body Massage Room</span><span data-lang="vi">Phòng massage body</span><span data-lang="ja">ボディマッサージルーム</span><span data-lang="ko">바디 마사지룸</span><span data-lang="zh">按摩房</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
+      </figure>
+      <figure class="gcard">
+        <button type="button" class="gphoto" aria-label="View larger photo: Private Room"><img src="assets/asset-13.jpg" alt="Private treatment room at TRE SPA with a colourful painting" loading="lazy"></button>
+        <figcaption><span data-lang="en">Private Room</span><span data-lang="vi">Phòng riêng</span><span data-lang="ja">個室</span><span data-lang="ko">프라이빗룸</span><span data-lang="zh">包间</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
+      </figure>
+      <figure class="gcard">
+        <button type="button" class="gphoto" aria-label="View larger photo: Hair Styling Corner"><img src="assets/asset-14.jpg" alt="Hair styling corner at TRE SPA with illuminated mirrors" loading="lazy"></button>
+        <figcaption><span data-lang="en">Hair Styling Corner</span><span data-lang="vi">Khu vực sấy tóc</span><span data-lang="ja">ヘアセットコーナー</span><span data-lang="ko">헤어 스타일링 코너</span><span data-lang="zh">吹发区</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
+      </figure>
+      <figure class="gcard">
+        <button type="button" class="gphoto" aria-label="View larger photo: Lieu, President of TRE SPA"><img src="assets/asset-15.jpg" alt="Lieu, President of TRE SPA, in a polka-dot dress" loading="lazy"></button>
+        <figcaption><span data-lang="en">Meet Our Owner — Lieu, President of TRE SPA</span><span data-lang="vi">Chủ spa — Chị Lieu, Giám đốc Tre Spa</span><span data-lang="ja">オーナーのご紹介 — 社長 Lieu</span><span data-lang="ko">오너 소개 — Lieu 대표</span><span data-lang="zh">店主介绍 — Lieu 店长</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
+      </figure>
+      <figure class="gcard">
+        <button type="button" class="gphoto" aria-label="View larger photo: Lieu, President of TRE SPA, in Da Nang"><img src="assets/asset-16.jpg" alt="Lieu, President of TRE SPA, with the Han River and Dragon Bridge in Da Nang behind her" loading="lazy"></button>
+        <figcaption><span data-lang="en">Meet Our Owner — Lieu, President of TRE SPA</span><span data-lang="vi">Chủ spa — Chị Lieu, Giám đốc Tre Spa</span><span data-lang="ja">オーナーのご紹介 — 社長 Lieu</span><span data-lang="ko">오너 소개 — Lieu 대표</span><span data-lang="zh">店主介绍 — Lieu 店长</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="menu" id="menu" data-active="en" aria-label="Treatment menu">
+    <h2>TREATMENT MENU<small>
+      <span class="inl" data-lang="en">OUR SERVICES • TRE SPA</span><span class="inl" data-lang="vi">THỰC ĐƠN DỊCH VỤ • TRE SPA</span><span class="inl" data-lang="ja">施術メニュー • TRE SPA</span><span class="inl" data-lang="ko">트리트먼트 메뉴 • TRE SPA</span><span class="inl" data-lang="zh">服务菜单 • TRE SPA</span>
+    </small></h2>
+
+    <div class="langbar" role="group" aria-label="Menu language">
+      <button type="button" data-setlang="en" aria-pressed="true">English</button>
+      <button type="button" data-setlang="vi" aria-pressed="false">Tiếng Việt</button>
+      <button type="button" data-setlang="ja" aria-pressed="false">日本語</button>
+      <button type="button" data-setlang="ko" aria-pressed="false">한국어</button>
+      <button type="button" data-setlang="zh" aria-pressed="false">中文</button>
+    </div>
+
+    <div class="mgroup">
+      <h3><span class="inl" data-lang="en">Body &amp; Therapy</span><span class="inl" data-lang="vi">Body &amp; Trị Liệu</span><span class="inl" data-lang="ja">ボディ＆セラピー</span><span class="inl" data-lang="ko">바디 &amp; 테라피</span><span class="inl" data-lang="zh">身体与疗法</span><small>01</small></h3>
+      <div class="svcgrid">
+        <article class="svc">
+          <h4>Body Massage</h4>
+          <p class="desc" data-lang="en">Slow, deep strokes work over the whole body to release built-up tension and restore a calm, balanced state.</p>
+          <p class="desc" data-lang="vi">Những động tác chậm và sâu trên toàn thân giúp giải tỏa căng thẳng tích tụ và đưa cơ thể về trạng thái thư thái, cân bằng.</p>
+          <p class="desc" data-lang="ja">ゆっくりと深いストロークで全身をケアし、たまった緊張をほどいて、心身を穏やかでバランスの取れた状態へ導きます。</p>
+          <p class="desc" data-lang="ko">느리고 깊은 스트로크로 전신을 케어하여 쌓인 긴장을 풀어주고, 몸과 마음을 차분하고 균형 잡힌 상태로 이끌어 줍니다.</p>
+          <p class="desc" data-lang="zh">以缓慢而深入的手法护理全身，释放累积的紧张，让身心回到平静、平衡的状态。</p>
+          <div class="prices">
+            <span class="price"><span class="mins">60 min</span><span class="amt">659.000đ</span></span>
+            <span class="price"><span class="mins">90 min</span><span class="amt">889.000đ</span></span>
+            <span class="price"><span class="mins">120 min</span><span class="amt">1.199.000đ</span></span>
+          </div>
+        </article>
+
+        <article class="svc">
+          <h4>Thai Massage</h4>
+          <p class="desc" data-lang="en">A traditional dry Thai treatment combining stretching and palm pressure along the body's lines, leaving you flexible, light and re-energised.</p>
+          <p class="desc" data-lang="vi">Liệu pháp Thái khô truyền thống, kết hợp kéo giãn và ấn huyệt bằng lòng bàn tay dọc theo các đường năng lượng, giúp cơ thể linh hoạt, nhẹ nhõm và tràn đầy năng lượng.</p>
+          <p class="desc" data-lang="ja">ストレッチと掌の圧を組み合わせた伝統的なタイ式ドライ施術。身体のラインに沿ってケアし、しなやかで軽やかな感覚へ導きます。</p>
+          <p class="desc" data-lang="ko">스트레칭과 손바닥 지압을 결합한 전통 타이식 드라이 테라피. 몸의 라인을 따라 케어하여 유연하고 가벼운 컨디션으로 이끌어 줍니다.</p>
+          <p class="desc" data-lang="zh">传统泰式干式疗法，结合拉伸与掌心按压，沿身体经络线条护理，让身体灵活轻盈、焕发活力。</p>
+          <div class="prices">
+            <span class="price"><span class="mins">60 min</span><span class="amt">759.000đ</span></span>
+            <span class="price"><span class="mins">90 min</span><span class="amt">1.049.000đ</span></span>
+            <span class="price"><span class="mins">120 min</span><span class="amt">1.379.000đ</span></span>
+          </div>
+        </article>
+
+        <article class="svc">
+          <h4>Circulation &amp; Wellness Therapy</h4>
+          <p class="desc" data-lang="en">Acupressure-point care created by our spa manager, working gently over the head, neck and body in a slow rhythm that supports circulation and a feeling of whole-body lightness.</p>
+          <p class="desc" data-lang="vi">Liệu pháp ấn huyệt do chính quản lý spa của chúng tôi xây dựng, tác động nhẹ nhàng lên đầu, cổ và toàn thân theo nhịp chậm, hỗ trợ tuần hoàn và mang lại cảm giác nhẹ nhõm toàn thân.</p>
+          <p class="desc" data-lang="ja">スパマネージャー自らの技術による指圧ケア。頭・首・全身のツボをゆっくりとしたリズムでやさしく押し、めぐりをサポートして全身の軽やかさへ導きます。</p>
+          <p class="desc" data-lang="ko">스파 매니저의 자체 기술로 완성한 지압 케어. 머리, 목, 전신의 혈자리를 느린 리듬으로 부드럽게 눌러 순환을 돕고 온몸이 가벼워지는 느낌을 선사합니다.</p>
+          <p class="desc" data-lang="zh">由本店水疗经理亲自创立的指压护理，以缓慢的节奏轻柔按压头部、颈部与全身穴位，促进循环，带来全身轻盈的感受。</p>
+          <div class="prices">
+            <span class="price"><span class="mins">60 min</span><span class="amt">759.000đ</span></span>
+            <span class="price"><span class="mins">90 min</span><span class="amt">1.049.000đ</span></span>
+            <span class="price"><span class="mins">120 min</span><span class="amt">1.379.000đ</span></span>
+          </div>
+        </article>
+
+        <article class="svc">
+          <h4>Release Muscle Tension</h4>
+          <p class="desc" data-lang="en">Focused acupressure that finds and softens stiff, tired muscles — ideal for desk workers and anyone carrying tension in the neck, shoulders and back.</p>
+          <p class="desc" data-lang="vi">Ấn huyệt tập trung, tìm và làm mềm những vùng cơ căng cứng, mệt mỏi — lý tưởng cho dân văn phòng và những ai hay bị căng mỏi cổ, vai, lưng.</p>
+          <p class="desc" data-lang="ja">凝り固まった筋肉を見つけて集中的にほぐす指圧ケア。デスクワークの方や、首・肩・背中の張りが気になる方におすすめです。</p>
+          <p class="desc" data-lang="ko">뭉치고 지친 근육을 찾아 집중적으로 풀어주는 지압 케어. 사무직 종사자나 목, 어깨, 등의 긴장이 신경 쓰이는 분께 추천합니다.</p>
+          <p class="desc" data-lang="zh">针对性指压护理，找到并放松僵硬疲惫的肌肉——非常适合久坐办公人士，以及颈、肩、背部紧张的人。</p>
+          <div class="prices">
+            <span class="price"><span class="mins">30 min</span><span class="amt">459.000đ</span></span>
+            <span class="price"><span class="mins">60 min</span><span class="amt">759.000đ</span></span>
+            <span class="price"><span class="mins">90 min</span><span class="amt">1.049.000đ</span></span>
+            <span class="price"><span class="mins">120 min</span><span class="amt">1.379.000đ</span></span>
+          </div>
+        </article>
+
+        <article class="svc wide">
+          <h4>Foot Massage</h4>
+          <p class="desc" data-lang="en">Pressure on the reflex zones of the feet, which mirror the whole body, eases tired legs and leaves every step feeling light.</p>
+          <p class="desc" data-lang="vi">Tác động lên các vùng phản xạ ở bàn chân — nơi phản chiếu toàn bộ cơ thể — giúp đôi chân mệt mỏi được thư giãn và mỗi bước đi thêm nhẹ nhàng.</p>
+          <p class="desc" data-lang="ja">全身を映し出す足裏の反射区を中心にケアし、疲れた脚をやさしく整えて、歩くたびに軽やかな感覚へ導きます。</p>
+          <p class="desc" data-lang="ko">전신을 비추는 발바닥 반사구를 중심으로 케어하여 지친 다리를 편안하게 하고, 걸음마다 가벼운 느낌을 선사합니다.</p>
+          <p class="desc" data-lang="zh">以足底反射区为中心进行护理，足部映照全身，帮助舒缓疲惫的双腿，让每一步都轻盈。</p>
+          <div class="prices">
+            <span class="price"><span class="mins">30 min</span><span class="amt">349.000đ</span></span>
+            <span class="price"><span class="mins">60 min</span><span class="amt">549.000đ</span></span>
+            <span class="price"><span class="mins">90 min</span><span class="amt">759.000đ</span></span>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="mgroup">
+      <h3><span class="inl" data-lang="en">Head Spa • Facial • Ear Care</span><span class="inl" data-lang="vi">Head Spa • Chăm Sóc Da Mặt • Chăm Sóc Tai</span><span class="inl" data-lang="ja">ヘッドスパ・フェイシャル・イヤーケア</span><span class="inl" data-lang="ko">헤드 스파 • 페이셜 • 이어 케어</span><span class="inl" data-lang="zh">头部水疗 • 面部 • 耳部护理</span><small>02</small></h3>
+      <div class="svcgrid">
+        <article class="svc">
+          <h4>Herbal Hair Wash</h4>
+          <p class="desc" data-lang="en">A traditional Vietnamese herbal hair wash with natural herbs, paired with a soothing head massage that calms the scalp — and the mind.</p>
+          <p class="desc" data-lang="vi">Gội đầu dưỡng sinh truyền thống Việt Nam với thảo dược thiên nhiên, kết hợp massage đầu thư giãn, giúp da đầu và tâm trí cùng được xoa dịu.</p>
+          <p class="desc" data-lang="ja">天然ハーブを使ったベトナム伝統の養生シャンプーに、心地よいヘッドマッサージを組み合わせ、頭皮と心を穏やかに整えます。</p>
+          <p class="desc" data-lang="ko">천연 허브를 사용한 베트남 전통 양생 샴푸에 편안한 헤드 마사지를 더해, 두피와 마음을 차분하게 가꾸어 줍니다.</p>
+          <p class="desc" data-lang="zh">采用天然草药的越南传统养生洗发，搭配舒缓的头部按摩，让头皮与心灵一同得到安抚。</p>
+          <div class="prices">
+            <span class="price"><span class="mins">45 min</span><span class="amt">499.000đ</span></span>
+            <span class="price"><span class="mins">60 min</span><span class="amt">599.000đ</span></span>
+            <span class="price"><span class="mins">90 min</span><span class="amt">899.000đ</span></span>
+          </div>
+        </article>
+
+        <article class="svc">
+          <h4>Head, Neck &amp; Shoulder</h4>
+          <p class="desc" data-lang="en">Concentrated care for the head, neck and shoulders that softens built-up tension and clears a heavy head after long hours at a screen.</p>
+          <p class="desc" data-lang="vi">Chăm sóc tập trung cho vùng đầu, cổ và vai, làm mềm sự căng cứng tích tụ và giúp đầu óc nhẹ nhõm sau nhiều giờ nhìn màn hình.</p>
+          <p class="desc" data-lang="ja">頭・首・肩まわりを集中的にケアし、蓄積した緊張を和らげます。長時間の画面作業で重くなった頭にもおすすめです。</p>
+          <p class="desc" data-lang="ko">머리, 목, 어깨를 집중 케어하여 쌓인 긴장을 풀어줍니다. 오랜 화면 작업으로 무거워진 머리에도 추천합니다.</p>
+          <p class="desc" data-lang="zh">集中护理头部、颈部与肩部，舒缓累积的紧张，长时间面对屏幕后沉重的头部也能得到放松。</p>
+          <div class="prices">
+            <span class="price"><span class="mins">60 min</span><span class="amt">599.000đ</span></span>
+            <span class="price"><span class="mins">90 min</span><span class="amt">849.000đ</span></span>
+          </div>
+        </article>
+
+        <article class="svc">
+          <h4>Facial Care</h4>
+          <p class="desc" data-lang="en">A gentle facial treatment that cleanses and nourishes the skin, leaving it bright, smooth and refreshed.</p>
+          <p class="desc" data-lang="vi">Liệu trình chăm sóc da mặt nhẹ nhàng, làm sạch và nuôi dưỡng làn da, mang lại vẻ tươi sáng, mịn màng và đầy sức sống.</p>
+          <p class="desc" data-lang="ja">肌を丁寧に整えるフェイシャルケア。明るく、なめらかで、みずみずしい素肌へ導きます。</p>
+          <p class="desc" data-lang="ko">피부를 정성껏 가꾸는 페이셜 케어. 밝고 매끄러우며 생기 있는 피부로 이끌어 줍니다.</p>
+          <p class="desc" data-lang="zh">温和的面部护理，清洁并滋养肌肤，让肌肤明亮、光滑、焕发光彩。</p>
+          <div class="prices">
+            <span class="price"><span class="mins">60 min</span><span class="amt">660.000đ</span></span>
+          </div>
+        </article>
+
+        <article class="svc">
+          <h4>Ear Care</h4>
+          <p class="desc" data-lang="en">Traditional Vietnamese ear care, performed gently and carefully, leaving a clean, light and deeply relaxing sensation.</p>
+          <p class="desc" data-lang="vi">Chăm sóc tai truyền thống Việt Nam, thực hiện nhẹ nhàng và tỉ mỉ, mang lại cảm giác sạch sẽ, nhẹ nhõm và thư giãn sâu.</p>
+          <p class="desc" data-lang="ja">ベトナムの伝統的な耳ケアを、やさしく丁寧に。すっきりと軽やかで、心地よい感覚へ導きます。</p>
+          <p class="desc" data-lang="ko">베트남 전통 이어 케어를 부드럽고 세심하게. 개운하고 가벼우며 편안한 느낌을 선사합니다.</p>
+          <p class="desc" data-lang="zh">越南传统耳部护理，手法轻柔细致，带来清爽、轻盈而放松的感受。</p>
+          <div class="prices">
+            <span class="price"><span class="mins">30 min</span><span class="amt">399.000đ</span></span>
+            <span class="price"><span class="mins">60 min</span><span class="amt">599.000đ</span></span>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="menunotes">
+      <p data-lang="en"><b>Hot Stone is free</b> with every treatment. &nbsp;•&nbsp; Prices <b>exclude VAT &amp; service charge</b> (charged separately). &nbsp;•&nbsp; <b>Same price every day</b> — weekdays, weekends &amp; holidays.</p>
+      <p data-lang="vi"><b>Đá nóng miễn phí</b> cho mọi liệu trình. &nbsp;•&nbsp; Giá <b>chưa bao gồm VAT và phí phục vụ</b> (tính riêng). &nbsp;•&nbsp; <b>Giá như nhau mỗi ngày</b> — ngày thường, cuối tuần và ngày lễ.</p>
+      <p data-lang="ja"><b>ホットストーンは全メニュー無料</b>で追加できます。&nbsp;•&nbsp; 価格には<b>VAT・サービス料を含みません</b>（別途請求）。&nbsp;•&nbsp; <b>平日・週末・祝日とも同価格</b>です。</p>
+      <p data-lang="ko"><b>핫스톤은 전 메뉴 무료</b>로 추가됩니다. &nbsp;•&nbsp; 가격은 <b>VAT 및 서비스 요금 별도</b>입니다. &nbsp;•&nbsp; <b>평일·주말·공휴일 모두 동일 가격</b>입니다.</p>
+      <p data-lang="zh"><b>所有项目免费加温石</b>。&nbsp;•&nbsp; 价格<b>不含增值税和服务费</b>，将另行收取。&nbsp;•&nbsp; <b>工作日、周末及节假日均为同一价格</b>。</p>
+    </div>
+  </section>
+
+  <div class="book">
+    <h3>HOW TO BOOK <span>• ĐẶT LỊCH • 예약 방법 • ご予約 • 预约方法</span></h3>
+    <p>Tap <b>Book on Facebook</b> below → choose date &amp; time → write your <b>treatment + phone number</b> in the booking note. We confirm on Messenger.</p>
+    <p>페이스북 페이지에서 <b>지금 예약</b>을 누르고 날짜·시간을 선택한 뒤, 예약 메모에 <b>원하는 시술과 전화번호</b>를 적어주세요.</p>
+    <p>Facebookページの<b>「予約する」</b>から日時を選び、予約メモに<b>ご希望のメニューと電話番号</b>をご記入ください。Messengerで確定のご連絡をします。</p>
+    <p>在 Facebook 页面点击<b>“立即预约”</b>，选择日期和时间，并在预约备注中填写<b>想做的项目和电话号码</b>，我们会通过 Messenger 确认。</p>
+    <div class="book-hint"><a class="book-btn clickable" href="https://www.facebook.com/profile.php?id=61596009494641&amp;sk=bookings" target="_blank" rel="noopener" aria-label="Open the TRE SPA booking page on Facebook">Book on Facebook ↗</a></div>
+    <p class="fallback">Booking page won't open? Message us on <a href="https://m.me/61596009494641" target="_blank" rel="noopener">Messenger</a> or call <a href="tel:+84963023657">+84 96 302 36 57</a> — we'll book you in.<br>Không mở được trang đặt lịch? Nhắn qua <a href="https://m.me/61596009494641" target="_blank" rel="noopener">Messenger</a> hoặc gọi <a href="tel:+84963023657">+84 96 302 36 57</a> nhé.</p>
+  </div>
+
+  <div class="inforow">
+    <div class="info">
+      <div>📍 <a href="https://www.google.com/maps/place/Tre+Spa/@16.0628361,108.2234613,17z/data=!3m1!4b1!4m6!3m5!1s0x314219a427e3474d:0x9a6c5dc00d35b9bf!8m2!3d16.0628361!4d108.2234613!16s%2Fg%2F11z_c3jws5" target="_blank" rel="noopener"><b>247 Trần Phú</b>, Hải Châu, Đà Nẵng</a></div>
+      <div>🕘 Open daily • Giờ mở cửa: <b>09:00 – 22:00</b></div>
+      <div class="hot">📞 Hotline: <a href="tel:+84963023657"><b>+84 96 302 36 57</b></a></div>
+    </div>
+    <div class="owner">
+      <img src="assets/asset-08.jpg" alt="Owner Đinh Thị Thanh Liễu">
+      <div>
+        <div class="nm">Đinh Thị Thanh Liễu</div>
+        <div class="rl">OWNER • CHỦ ĐẦU TƯ</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="mapbox">
+      <div class="cap">FIND US • BẢN ĐỒ • 오시는 길 • アクセス • 地址</div>
+      <a class="maplink" href="https://www.google.com/maps/place/Tre+Spa/@16.0628361,108.2234613,17z/data=!3m1!4b1!4m6!3m5!1s0x314219a427e3474d:0x9a6c5dc00d35b9bf!8m2!3d16.0628361!4d108.2234613!16s%2Fg%2F11z_c3jws5" target="_blank" rel="noopener" aria-label="Open TRE SPA in Google Maps">
+      <svg class="mapsvg" viewBox="0 0 660 296" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans, sans-serif" role="img" aria-label="Map to TRE SPA, 247 Trần Phú, Da Nang">
+        <rect x="0" y="0" width="660" height="296" fill="#F2ECDC"/>
+        <rect x="486" y="0" width="174" height="296" fill="#BCD9E2"/>
+        <text x="640" y="150" font-size="15" fill="#4E7A89" font-weight="700" transform="rotate(90 640 150)" text-anchor="middle" letter-spacing="3">SÔNG HÀN • HÀN RIVER</text>
+        <rect x="96" y="0" width="20" height="296" fill="#FFFFFF"/>
+        <rect x="0" y="30" width="486" height="18" fill="#FFFFFF"/>
+        <rect x="0" y="238" width="486" height="20" fill="#FFFFFF"/>
+        <text x="8" y="24" font-size="12.5" fill="#9A8A66">Lê Duẩn</text>
+        <text x="8" y="232" font-size="12.5" fill="#9A8A66">Nguyễn Văn Linh</text>
+        <text x="126" y="150" font-size="12.5" fill="#9A8A66" transform="rotate(-90 126 150)" text-anchor="middle">Phan Châu Trinh</text>
+        <rect x="438" y="0" width="26" height="296" fill="#FFFFFF" stroke="#D8C9A3"/>
+        <text x="430" y="120" font-size="13" fill="#8A7A52" transform="rotate(-90 430 120)" text-anchor="middle" font-weight="600">Bạch Đằng</text>
+        <rect x="298" y="0" width="30" height="296" fill="#F6DC7E" stroke="#C9A83C" stroke-width="1.5"/>
+        <text x="290" y="110" font-size="14" fill="#856228" transform="rotate(-90 290 110)" text-anchor="middle" font-weight="700">Trần Phú</text>
+        <rect x="328" y="240" width="332" height="16" fill="#8FA3AD"/>
+        <path d="M 486 240 Q 573 196 660 240" stroke="#8FA3AD" stroke-width="5" fill="none"/>
+        <text x="560" y="282" font-size="13.5" fill="#4E7A89" font-weight="700" text-anchor="middle">Cầu Rồng • Dragon Bridge</text>
+        <rect x="300" y="52" width="26" height="18" fill="#CBB26A"/>
+        <text x="336" y="66" font-size="13" fill="#6B5B33" font-weight="600">Chợ Hàn • Hàn Market</text>
+        <g>
+          <path d="M313 158 C 298 158 289 169 289 181 C 289 197 313 218 313 218 C 313 218 337 197 337 181 C 337 169 328 158 313 158 Z" fill="#B3392B" stroke="#7E271C" stroke-width="2"/>
+          <circle cx="313" cy="181" r="8.5" fill="#FFF7E2"/>
+        </g>
+        <g>
+          <rect x="346" y="160" width="212" height="44" rx="9" fill="#3A2413"/>
+          <text x="452" y="180" font-size="16.5" fill="#FFF7E2" font-weight="800" text-anchor="middle">TRE SPA</text>
+          <text x="452" y="197" font-size="12.5" fill="#E9CD8A" text-anchor="middle">247 Trần Phú</text>
+        </g>
+        <text x="14" y="288" font-size="12" fill="#9A8A66">↑ N • Hải Châu, Đà Nẵng</text>
+      </svg>
+      </a>
+      <div class="addr"><a href="https://www.google.com/maps/place/Tre+Spa/@16.0628361,108.2234613,17z/data=!3m1!4b1!4m6!3m5!1s0x314219a427e3474d:0x9a6c5dc00d35b9bf!8m2!3d16.0628361!4d108.2234613!16s%2Fg%2F11z_c3jws5" target="_blank" rel="noopener">247 Trần Phú — near Hàn River &amp; Dragon Bridge</a></div>
+    </div>
+    <div class="qrbox">
+      <div class="cap">SCAN ME • QUÉT MÃ QR</div>
+      <div class="qrgrid">
+        <a class="qrcell clickable" href="https://www.facebook.com/profile.php?id=61596009494641&amp;sk=bookings" target="_blank" rel="noopener" aria-label="Book now — TRE SPA booking page on Facebook"><img src="assets/asset-17.png" alt="Booking QR code"><span class="lb">Book Now<small>예약 • 予約 • 预约 • Đặt lịch</small></span><span class="open">TAP TO OPEN ↗</span></a>
+        <a class="qrcell clickable" href="https://www.google.com/maps/place/Tre+Spa/@16.0628361,108.2234613,17z/data=!3m1!4b1!4m6!3m5!1s0x314219a427e3474d:0x9a6c5dc00d35b9bf!8m2!3d16.0628361!4d108.2234613!16s%2Fg%2F11z_c3jws5" target="_blank" rel="noopener" aria-label="Open Google Maps directions"><img src="assets/asset-18.png" alt="Google Maps QR code"><span class="lb">Google Maps<small>Chỉ đường • Directions</small></span><span class="open">TAP TO OPEN ↗</span></a>
+        <a class="qrcell clickable" href="https://www.facebook.com/profile.php?id=61596009494641" target="_blank" rel="noopener" aria-label="TRE SPA on Facebook"><img src="assets/asset-19.png" alt="Facebook QR code"><span class="lb">Facebook<small>Follow us</small></span><span class="open">TAP TO OPEN ↗</span></a>
+        <a class="qrcell clickable" href="https://www.instagram.com/tre_spa_da_nang/" target="_blank" rel="noopener" aria-label="TRE SPA on Instagram"><img src="assets/asset-20.png" alt="Instagram QR code"><span class="lb">Instagram<small>@tre_spa_da_nang</small></span><span class="open">TAP TO OPEN ↗</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">TRE SPA • <a href="https://www.google.com/maps/place/Tre+Spa/@16.0628361,108.2234613,17z/data=!3m1!4b1!4m6!3m5!1s0x314219a427e3474d:0x9a6c5dc00d35b9bf!8m2!3d16.0628361!4d108.2234613!16s%2Fg%2F11z_c3jws5" target="_blank" rel="noopener"><b>247 Trần Phú, Đà Nẵng</b></a> • Open daily 09:00 – 22:00 • Hotline <a href="tel:+84963023657"><b>+84 96 302 36 57</b></a> • Instagram <a href="https://www.instagram.com/tre_spa_da_nang/" target="_blank" rel="noopener"><b>@tre_spa_da_nang</b></a></div>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button type="button" class="lclose" id="lightbox-close" aria-label="Close photo viewer">×</button>
+  <img id="lightbox-img" src="assets/asset-05.jpg" alt="">
+  <div class="lcap" id="lightbox-cap"></div>
+</div>
+
+<div class="stickybar">
+  <a href="https://www.facebook.com/profile.php?id=61596009494641&amp;sk=bookings" target="_blank" rel="noopener" aria-label="Book now — TRE SPA booking page on Facebook">
+    <span>📅 Book Now</span><span class="langs">예약 • 予約 • 预约</span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var menu = document.getElementById('menu');
+  if(!menu) return;
+  var promo = document.getElementById('promo');
+  var gallery = document.getElementById('gallery');
+  var about = document.getElementById('about');
+  var buttons = document.querySelectorAll('[data-setlang]');
+  var currentLang = 'en';
+  function setLang(lang){
+    currentLang = lang;
+    menu.setAttribute('data-active', lang);
+    if(promo) promo.setAttribute('data-active', lang);
+    if(gallery) gallery.setAttribute('data-active', lang);
+    if(about) about.setAttribute('data-active', lang);
+    for(var i=0;i<buttons.length;i++){
+      buttons[i].setAttribute('aria-pressed', buttons[i].getAttribute('data-setlang') === lang ? 'true' : 'false');
+    }
+  }
+  for(var i=0;i<buttons.length;i++){
+    buttons[i].addEventListener('click', function(){ setLang(this.getAttribute('data-setlang')); });
+  }
+
+  var transcriptToggles = document.querySelectorAll('.transcript-toggle');
+  for(var t=0;t<transcriptToggles.length;t++){
+    transcriptToggles[t].addEventListener('click', function(){
+      var wrap = this.parentNode;
+      var panel = wrap ? wrap.querySelector('.transcript-panel') : null;
+      if(!panel) return;
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      if(expanded){
+        panel.setAttribute('hidden', '');
+        this.setAttribute('aria-expanded', 'false');
+      } else {
+        panel.removeAttribute('hidden');
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+  }
+
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  var lbCap = document.getElementById('lightbox-cap');
+  var lbClose = document.getElementById('lightbox-close');
+  var lastFocus = null;
+  function openLightbox(btn){
+    var img = btn.querySelector('img');
+    if(!img || !lightbox) return;
+    lastFocus = btn;
+    lbImg.setAttribute('src', img.getAttribute('src'));
+    lbImg.setAttribute('alt', img.getAttribute('alt') || '');
+    var card = btn.parentNode;
+    var capText = '';
+    if(card){
+      var spans = card.querySelectorAll('figcaption [data-lang]');
+      for(var j=0;j<spans.length;j++){
+        if(spans[j].getAttribute('data-lang') === currentLang){ capText = spans[j].textContent; break; }
+      }
+      if(!capText && spans.length){ capText = spans[0].textContent; }
+    }
+    lbCap.textContent = capText;
+    lightbox.classList.add('open');
+    if(lbClose) lbClose.focus();
+  }
+  function closeLightbox(){
+    if(!lightbox) return;
+    lightbox.classList.remove('open');
+    if(lastFocus) lastFocus.focus();
+  }
+  var photos = document.querySelectorAll('.gphoto');
+  for(var k=0;k<photos.length;k++){
+    photos[k].addEventListener('click', function(){ openLightbox(this); });
+  }
+  if(lbClose) lbClose.addEventListener('click', closeLightbox);
+  if(lightbox) lightbox.addEventListener('click', function(e){ if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && lightbox && lightbox.classList.contains('open')) closeLightbox();
+  });
+})();
+</script>
+</body>
+</html>
