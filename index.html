@@ -197,8 +197,10 @@
   .about[data-active="zh"] [data-lang="zh"].inl{ display:inline; }
   .about-card { margin-top:16px; background:rgba(255,255,255,.88); border:1.5px solid var(--border); border-top:5px solid var(--gold);
                 border-radius:14px; padding:24px 28px; display:flex; gap:24px; align-items:flex-start; }
-  .about-photo { width:120px; height:120px; border-radius:50%; object-fit:cover; object-position:center 22%;
-                 border:3px solid var(--gold); flex:none; }
+  .about-mark { width:120px; height:120px; border-radius:50%; flex:none;
+                background:radial-gradient(circle at 50% 38%, #4A2C14, #241407);
+                border:3px solid var(--gold); display:flex; align-items:center; justify-content:center; }
+  .about-mark img { width:84px; height:84px; object-fit:contain; }
   .about-text { min-width:0; }
   .about-text p { font-size:16.5px; line-height:1.75; color:var(--muted); }
   .about-text p + p { margin-top:12px; }
@@ -348,7 +350,10 @@
   .info .hot { margin-top:4px; font-size:22px; }
   .owner { flex:1; background:rgba(255,255,255,.9); border:1.5px solid var(--border); border-radius:14px;
            display:flex; align-items:center; gap:14px; padding:12px 18px; }
-  .owner img { width:82px; height:82px; border-radius:50%; object-fit:cover; object-position:center 22%; border:3px solid var(--gold); flex:none; }
+  .owner .owner-mark { width:82px; height:82px; border-radius:50%; flex:none;
+                       background:radial-gradient(circle at 50% 38%, #4A2C14, #241407);
+                       border:3px solid var(--gold); display:flex; align-items:center; justify-content:center; }
+  .owner .owner-mark img { width:54px; height:54px; object-fit:contain; }
   .owner .nm { font-family:'Noto Serif', serif; font-size:19px; font-weight:700; color:var(--green); line-height:1.3; }
   .owner .rl { font-size:14px; color:var(--gold-dark); letter-spacing:1px; margin-top:2px; }
 
@@ -531,7 +536,7 @@
       <span class="inl" data-lang="en">FROM OUR OWNER, LIEU</span><span class="inl" data-lang="vi">LỜI CỦA CHỦ SPA — LIEU</span><span class="inl" data-lang="ja">オーナー Lieu の言葉</span><span class="inl" data-lang="ko">FROM OUR OWNER, LIEU</span><span class="inl" data-lang="zh">FROM OUR OWNER, LIEU</span>
     </small></h2>
     <div class="about-card">
-      <img class="about-photo" src="assets/asset-08.jpg" alt="Lieu, Owner of TRE SPA">
+      <div class="about-mark" aria-hidden="true"><img src="assets/asset-03.png" alt=""></div>
       <div class="about-text">
         <div data-lang="en">
           <p>TRE SPA was created as a place where you can set down the tiredness of everyday life for a while, take time to care for yourself, and find balance again — in body and in mind.</p>
@@ -703,7 +708,7 @@
         <figcaption><span data-lang="en">Reception</span><span data-lang="vi">Lễ tân</span><span data-lang="ja">受付</span><span data-lang="ko">리셉션</span><span data-lang="zh">前台</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
       </figure>
       <figure class="gcard">
-        <button type="button" class="gphoto" aria-label="View larger photo: Foot Massage Room"><img src="assets/asset-09.jpg" alt="Foot massage room at TRE SPA with reclining chairs" loading="lazy"></button>
+        <button type="button" class="gphoto" aria-label="View larger photo: Foot Massage Room"><img src="assets/asset-08.jpg" alt="Foot massage room at TRE SPA with reclining chairs" loading="lazy"></button>
         <figcaption><span data-lang="en">Foot Massage Room</span><span data-lang="vi">Phòng massage chân</span><span data-lang="ja">フットマッサージルーム</span><span data-lang="ko">발 마사지룸</span><span data-lang="zh">足疗室</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
       </figure>
       <figure class="gcard">
@@ -715,32 +720,24 @@
         <figcaption><span data-lang="en">Head Spa Room</span><span data-lang="vi">Phòng gội đầu dưỡng sinh</span><span data-lang="ja">ヘッドスパルーム</span><span data-lang="ko">헤드 스파룸</span><span data-lang="zh">养发头疗室</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
       </figure>
       <figure class="gcard">
-        <button type="button" class="gphoto" aria-label="View larger photo: Body Massage Room"><img src="assets/asset-10.jpg" alt="Body massage room at TRE SPA with a bamboo painting" loading="lazy"></button>
+        <button type="button" class="gphoto" aria-label="View larger photo: Body Massage Room"><img src="assets/asset-09.jpg" alt="Body massage room at TRE SPA with a bamboo painting" loading="lazy"></button>
         <figcaption><span data-lang="en">Body Massage Room</span><span data-lang="vi">Phòng massage body</span><span data-lang="ja">ボディマッサージルーム</span><span data-lang="ko">바디 마사지룸</span><span data-lang="zh">按摩房</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
       </figure>
       <figure class="gcard">
-        <button type="button" class="gphoto" aria-label="View larger photo: Body Massage Room"><img src="assets/asset-11.jpg" alt="Body massage room at TRE SPA with two beds" loading="lazy"></button>
+        <button type="button" class="gphoto" aria-label="View larger photo: Body Massage Room"><img src="assets/asset-10.jpg" alt="Body massage room at TRE SPA with two beds" loading="lazy"></button>
         <figcaption><span data-lang="en">Body Massage Room</span><span data-lang="vi">Phòng massage body</span><span data-lang="ja">ボディマッサージルーム</span><span data-lang="ko">바디 마사지룸</span><span data-lang="zh">按摩房</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
       </figure>
       <figure class="gcard">
-        <button type="button" class="gphoto" aria-label="View larger photo: Body Massage Room"><img src="assets/asset-12.jpg" alt="Body massage room at TRE SPA with warm lighting and the TRE SPA logo on the bed linen" loading="lazy"></button>
+        <button type="button" class="gphoto" aria-label="View larger photo: Body Massage Room"><img src="assets/asset-11.jpg" alt="Body massage room at TRE SPA with warm lighting and the TRE SPA logo on the bed linen" loading="lazy"></button>
         <figcaption><span data-lang="en">Body Massage Room</span><span data-lang="vi">Phòng massage body</span><span data-lang="ja">ボディマッサージルーム</span><span data-lang="ko">바디 마사지룸</span><span data-lang="zh">按摩房</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
       </figure>
       <figure class="gcard">
-        <button type="button" class="gphoto" aria-label="View larger photo: Private Room"><img src="assets/asset-13.jpg" alt="Private treatment room at TRE SPA with a colourful painting" loading="lazy"></button>
+        <button type="button" class="gphoto" aria-label="View larger photo: Private Room"><img src="assets/asset-12.jpg" alt="Private treatment room at TRE SPA with a colourful painting" loading="lazy"></button>
         <figcaption><span data-lang="en">Private Room</span><span data-lang="vi">Phòng riêng</span><span data-lang="ja">個室</span><span data-lang="ko">프라이빗룸</span><span data-lang="zh">包间</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
       </figure>
       <figure class="gcard">
-        <button type="button" class="gphoto" aria-label="View larger photo: Hair Styling Corner"><img src="assets/asset-14.jpg" alt="Hair styling corner at TRE SPA with illuminated mirrors" loading="lazy"></button>
+        <button type="button" class="gphoto" aria-label="View larger photo: Hair Styling Corner"><img src="assets/asset-13.jpg" alt="Hair styling corner at TRE SPA with illuminated mirrors" loading="lazy"></button>
         <figcaption><span data-lang="en">Hair Styling Corner</span><span data-lang="vi">Khu vực sấy tóc</span><span data-lang="ja">ヘアセットコーナー</span><span data-lang="ko">헤어 스타일링 코너</span><span data-lang="zh">吹发区</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
-      </figure>
-      <figure class="gcard">
-        <button type="button" class="gphoto" aria-label="View larger photo: Lieu, President of TRE SPA"><img src="assets/asset-15.jpg" alt="Lieu, President of TRE SPA, in a polka-dot dress" loading="lazy"></button>
-        <figcaption><span data-lang="en">Meet Our Owner — Lieu, President of TRE SPA</span><span data-lang="vi">Chủ spa — Chị Lieu, Giám đốc Tre Spa</span><span data-lang="ja">オーナーのご紹介 — 社長 Lieu</span><span data-lang="ko">오너 소개 — Lieu 대표</span><span data-lang="zh">店主介绍 — Lieu 店长</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
-      </figure>
-      <figure class="gcard">
-        <button type="button" class="gphoto" aria-label="View larger photo: Lieu, President of TRE SPA, in Da Nang"><img src="assets/asset-16.jpg" alt="Lieu, President of TRE SPA, with the Han River and Dragon Bridge in Da Nang behind her" loading="lazy"></button>
-        <figcaption><span data-lang="en">Meet Our Owner — Lieu, President of TRE SPA</span><span data-lang="vi">Chủ spa — Chị Lieu, Giám đốc Tre Spa</span><span data-lang="ja">オーナーのご紹介 — 社長 Lieu</span><span data-lang="ko">오너 소개 — Lieu 대표</span><span data-lang="zh">店主介绍 — Lieu 店长</span><small class="gtap">TAP TO ENLARGE ↗</small></figcaption>
       </figure>
     </div>
   </section>
@@ -917,7 +914,7 @@
       <div class="hot">📞 Hotline: <a href="tel:+84963023657"><b>+84 96 302 36 57</b></a></div>
     </div>
     <div class="owner">
-      <img src="assets/asset-08.jpg" alt="Owner Đinh Thị Thanh Liễu">
+      <div class="owner-mark" aria-hidden="true"><img src="assets/asset-03.png" alt=""></div>
       <div>
         <div class="nm">Đinh Thị Thanh Liễu</div>
         <div class="rl">OWNER • CHỦ ĐẦU TƯ</div>
@@ -965,10 +962,10 @@
     <div class="qrbox">
       <div class="cap">SCAN ME • QUÉT MÃ QR</div>
       <div class="qrgrid">
-        <a class="qrcell clickable" href="https://www.facebook.com/profile.php?id=61596009494641&amp;sk=bookings" target="_blank" rel="noopener" aria-label="Book now — TRE SPA booking page on Facebook"><img src="assets/asset-17.png" alt="Booking QR code"><span class="lb">Book Now<small>예약 • 予約 • 预约 • Đặt lịch</small></span><span class="open">TAP TO OPEN ↗</span></a>
-        <a class="qrcell clickable" href="https://www.google.com/maps/place/Tre+Spa/@16.0628361,108.2234613,17z/data=!3m1!4b1!4m6!3m5!1s0x314219a427e3474d:0x9a6c5dc00d35b9bf!8m2!3d16.0628361!4d108.2234613!16s%2Fg%2F11z_c3jws5" target="_blank" rel="noopener" aria-label="Open Google Maps directions"><img src="assets/asset-18.png" alt="Google Maps QR code"><span class="lb">Google Maps<small>Chỉ đường • Directions</small></span><span class="open">TAP TO OPEN ↗</span></a>
-        <a class="qrcell clickable" href="https://www.facebook.com/profile.php?id=61596009494641" target="_blank" rel="noopener" aria-label="TRE SPA on Facebook"><img src="assets/asset-19.png" alt="Facebook QR code"><span class="lb">Facebook<small>Follow us</small></span><span class="open">TAP TO OPEN ↗</span></a>
-        <a class="qrcell clickable" href="https://www.instagram.com/tre_spa_da_nang/" target="_blank" rel="noopener" aria-label="TRE SPA on Instagram"><img src="assets/asset-20.png" alt="Instagram QR code"><span class="lb">Instagram<small>@tre_spa_da_nang</small></span><span class="open">TAP TO OPEN ↗</span></a>
+        <a class="qrcell clickable" href="https://www.facebook.com/profile.php?id=61596009494641&amp;sk=bookings" target="_blank" rel="noopener" aria-label="Book now — TRE SPA booking page on Facebook"><img src="assets/asset-14.png" alt="Booking QR code"><span class="lb">Book Now<small>예약 • 予約 • 预约 • Đặt lịch</small></span><span class="open">TAP TO OPEN ↗</span></a>
+        <a class="qrcell clickable" href="https://www.google.com/maps/place/Tre+Spa/@16.0628361,108.2234613,17z/data=!3m1!4b1!4m6!3m5!1s0x314219a427e3474d:0x9a6c5dc00d35b9bf!8m2!3d16.0628361!4d108.2234613!16s%2Fg%2F11z_c3jws5" target="_blank" rel="noopener" aria-label="Open Google Maps directions"><img src="assets/asset-15.png" alt="Google Maps QR code"><span class="lb">Google Maps<small>Chỉ đường • Directions</small></span><span class="open">TAP TO OPEN ↗</span></a>
+        <a class="qrcell clickable" href="https://www.facebook.com/profile.php?id=61596009494641" target="_blank" rel="noopener" aria-label="TRE SPA on Facebook"><img src="assets/asset-16.png" alt="Facebook QR code"><span class="lb">Facebook<small>Follow us</small></span><span class="open">TAP TO OPEN ↗</span></a>
+        <a class="qrcell clickable" href="https://www.instagram.com/tre_spa_da_nang/" target="_blank" rel="noopener" aria-label="TRE SPA on Instagram"><img src="assets/asset-17.png" alt="Instagram QR code"><span class="lb">Instagram<small>@tre_spa_da_nang</small></span><span class="open">TAP TO OPEN ↗</span></a>
       </div>
     </div>
   </div>
